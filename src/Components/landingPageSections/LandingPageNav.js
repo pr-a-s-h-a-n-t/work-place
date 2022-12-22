@@ -53,7 +53,7 @@ function LandingPageNav() {
     };
 
     return (
-        <AppBar position="sticky" sx={{background: "#ffff "}}>
+        <AppBar position="sticky" sx={{ background: "#ffff " }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
 
@@ -78,7 +78,7 @@ function LandingPageNav() {
                             aria-controls="menu-appbar"
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
-                            color="inherit"
+                            color="black"
                         >
                             <MenuIcon />
                         </IconButton>
@@ -127,7 +127,7 @@ function LandingPageNav() {
                         flexGrow: 1,
                         display: { xs: "none", md: "flex" },
                         justifyContent: "center",
-                         
+
                     }}>
                         {pages.map((page) => (
                             <Button
