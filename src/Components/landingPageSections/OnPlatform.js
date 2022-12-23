@@ -2,48 +2,58 @@
 import React from "react";
 import SolutionCard from "../common/SolutionCard";
 import "./LandingPage.css";
-import icon from "../../assets/Vector-marketing.png";
+import VectormarketingCardLogo from "../../assets/Vector-marketing.png";
+import VectorgovernmentCardLogo from "../../assets/Vector-government.png";
+import  DesigndevelopmentCardLogo from "../../assets/designdevelopment.png";
+import VectorfinanceCardLogo from "../../assets/Vector-finance.png";
+import VectorcustomerCardLogo from "../../assets/Vector-customer.png";
+import VectorbusinessCardLogo from "../../assets/Vector-business.png";
+import HumanresearchCardLogo from "../../assets/humanResearch.png";
+import ProjectmanagementCardLogo from "../../assets/project.png"; 
+
+
+
 import { Grid } from "@mui/material";
 const dataList = [
   {
     title: "Marketing & Communication",
     description: "237 Jobs Available",
-    icon: icon,
+    icon: VectormarketingCardLogo,
   },
   {
     title: "Design & Development",
     description: "237 Jobs Available",
-    icon: icon,
+    icon: DesigndevelopmentCardLogo,
   },
   {
     title: "Human Research & Development",
     description: "237 Jobs Available",
-    icon: icon,
+    icon: HumanresearchCardLogo,
   },
   {
     title: "Finance Management",
     description: "237 Jobs Available",
-    icon: icon,
+    icon: VectorfinanceCardLogo,
   },
   {
     title: "Government Jobs",
     description: "237 Jobs Available",
-    icon: icon,
+    icon: VectorgovernmentCardLogo,
   },
   {
     title: "Business & Consulting",
     description: "237 Jobs Available",
-    icon: icon,
+    icon: VectorbusinessCardLogo,
   },
   {
     title: "Customer Support Care",
     description: "237 Jobs Available",
-    icon: icon,
+    icon: VectorcustomerCardLogo,
   },
   {
     title: "Project Management",
     description: "237 Jobs Available",
-    icon: icon,
+    icon: ProjectmanagementCardLogo,
   },
 ];
 

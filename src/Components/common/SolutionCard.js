@@ -1,12 +1,13 @@
 import { Grid } from "@mui/material";
 import React from "react";
+import "./SolutionCard.css"
 
 function SolutionCard({ title, description, icon }) {
   return (
     <Grid item xs={12} sm={6} md={3}>
       <div className="solutionCard-container">
         <div>
-          <img style={{ marginRight: '10px' }} alt="icon" src={icon} />
+          <img style={{ marginRight: '10px', maxWidth: "4rem" }} alt="icon" src={icon} />
         </div>
         <div className="solutionCard-title" >
           <div>{title}</div>

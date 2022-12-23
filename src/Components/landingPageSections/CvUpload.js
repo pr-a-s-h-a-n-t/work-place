@@ -2,7 +2,9 @@
 
 
 import React from 'react'
-
+// import Logo from '../../../assets/bannerImg.png'
+// import Rafiki from '../../../assets/rafiki.png'
+// import './index.css'
 import Rafiki from "../../assets/rafiki.png"
 function CvUpload() {
   return (
