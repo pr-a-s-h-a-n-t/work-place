@@ -16,7 +16,7 @@ import EmployerProfile from '../Components/pages/employer/EmployerProfile';
 function Navs() {
 
     const ProtectedCandidateRoute = () => {
-        if (false) {
+        if (true) {
             return <Outlet />
         }
         else {
@@ -24,7 +24,7 @@ function Navs() {
         }
     }
     const ProtectedEmployerRoute = () => {
-        if (false) {
+        if (true) {
             return <Outlet />
         }
         else {
