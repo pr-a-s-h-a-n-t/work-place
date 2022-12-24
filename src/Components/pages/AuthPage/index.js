@@ -7,9 +7,14 @@ import googleIcon from "../../../assets/google-icon.png";
 import GirlLogo from "../../../assets/authpagelogo.png";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+
+
 function AuthPage({ type }) {
-  const navigate = useNavigate();
+   
+  const navigateuser = useNavigate();
+
   const signIn = () => {
+    
     const provider = new GoogleAuthProvider();
 
     signInWithPopup(auth, provider)
@@ -19,24 +24,27 @@ function AuthPage({ type }) {
         // The signed-in user info.
         const user = result.user;
         localStorage.setItem("user", JSON.stringify(user));
+        console.log(type);
         if (type === "candidate") {
           //user exist
           //?user exist as candidate
           //!user exist as employer
 
           //user not exist--> redirect to candidate onboarding page
-          navigate("/candidate/onboarding");
+          navigateuser("/candidate/onboarding");
         } else {
           //user exist
           //?user exist as employer
           //!user exist as candidate
 
           //user not exist--> redirect to employer onboarding page`
-          navigate("/employer/onboarding");
+          navigateuser("/employer/onboarding");
         }
         console.log(result, "result");
       })
-      .catch((error) => {});
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -60,7 +68,7 @@ function AuthPage({ type }) {
         </div>
 
         <div className="logo-container">
-          <img alt="logo" src={GirlLogo} />
+          <img alt="logo" src={GirlLogo}  />
         </div>
       </Grid>
     </div>
@@ -68,6 +76,8 @@ function AuthPage({ type }) {
 }
 
 export default AuthPage;
+
+// Importance point for Building authentication Logic!!! 
 
 // if user is candidate and exist redirect to candidate profile page
 // if user is candidate and not exist redirect to candidate onboarding page

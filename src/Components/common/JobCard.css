@@ -14,7 +14,7 @@
     height: 265px;
     /* padding: 19px 12px 24px 20px; */
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
 }
@@ -28,11 +28,11 @@
     align-items: center;
 }
 
-.company .image {}
+ 
 
 .company .name {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     justify-content: space-evenly;
     flex-direction: column;
 }
@@ -63,7 +63,7 @@
 
 .jobCard .role {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
 }

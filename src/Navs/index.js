@@ -10,7 +10,7 @@ import CandidateProfile from '../Components/pages/candidate/CandidateProfile';
 import EmployerApplications from '../Components/pages/employer/EmployerApplications';
 import EmployerConversations from '../Components/pages/employer/EmployerConversations';
 import EmployerJobs from '../Components/pages/employer/EmployerJobs';
-import EmployerOnboarding from '../Components/pages/employer/EmployerOnboarding';
+import EmployerOnboarding from '../Components/pages/employer/employerOnboarding/index';
 import EmployerProfile from '../Components/pages/employer/EmployerProfile';
 
 function Navs() {
