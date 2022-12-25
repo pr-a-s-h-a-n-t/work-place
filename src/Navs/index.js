@@ -19,6 +19,8 @@ import EmployerJobs from "../Components/pages/employer/EmployerJobs";
 import EmployerOnboarding from "../Components/pages/employer/employerOnboarding/index";
 import EmployerProfile from "../Components/pages/employer/EmployerProfile";
 import CandidateHoc from "../HOC/CandidateHoc";
+import EmployerHoc from "../HOC/EmployerHoc";
+
  
 
 function Navs() {
@@ -75,19 +77,19 @@ function Navs() {
 
           <Route
                         path='/employer/profile'
-                        element={<CandidateHoc> <EmployerProfile /> </CandidateHoc>}
+                        element={<EmployerHoc> <EmployerProfile /> </EmployerHoc>}
                     />
                     <Route
                         path='/employer/jobs'
-                        element={<CandidateHoc><EmployerJobs /></CandidateHoc> }
+                        element={<EmployerHoc><EmployerJobs /></EmployerHoc> }
                     />
                     <Route
                         path='/employer/applications'
-                        element={<CandidateHoc><EmployerApplications /></CandidateHoc> }
+                        element={<EmployerHoc><EmployerApplications /></EmployerHoc> }
                     />
                     <Route
                         path='/employer/conversations'
-                        element={<CandidateHoc><EmployerConversations /></CandidateHoc>  }
+                        element={<EmployerHoc><EmployerConversations /></EmployerHoc>  }
                     />
            
         </Route>
