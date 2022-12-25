@@ -3,7 +3,7 @@ import React from 'react'
 function CandidateJobs() {
   return (
     <div>
-      this is job section page
+      this is Candidate job section page
     </div>
   )
 }
