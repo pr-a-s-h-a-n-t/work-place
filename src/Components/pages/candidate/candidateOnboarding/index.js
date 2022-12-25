@@ -22,7 +22,7 @@ import {
   jobTitle,
   SkillsDownList,
 } from "../../../../constants/index";
-function EmployerOnboarding() {
+function CandidateOnboarding() {
   const navigate = useNavigate();
   const [uploadLoading, setUploadLoading] = useState(0);
   let inputRef = React.createRef();
@@ -234,18 +234,7 @@ function EmployerOnboarding() {
   );
 }
 
-export default EmployerOnboarding;
+export default CandidateOnboarding;
 
 
-// We are going to take this information from employer for onboarding purposes.
-
-// Company name
-// industry type
-// no of employees
-// company website
-// company email
-// company phone number
-// company location
-// company tagline  
-// company description
-// company logo
+ 
