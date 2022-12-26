@@ -20,6 +20,11 @@
   
 }
 
+.MuiAutocomplete-hasPopupIcon.css-aoep9u .MuiOutlinedInput-root, .MuiAutocomplete-hasClearIcon.css-aoep9u .MuiOutlinedInput-root {
+  padding-right: 39px;
+  height: 2.35rem;
+}
+
 .css-mhc70k-MuiGrid-root>.MuiGrid-item {
   padding-left: 12px;
   padding-right: 12px;
