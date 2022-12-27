@@ -354,7 +354,7 @@ import {
   };
   return (
     <form onSubmit={(e) => submit(e)} className="onboarding-container">
-      <h2 className="candidate-profile-heading">PROFILE SETUP</h2>
+      <h2 className="candidate-profile-heading">Setup your Candidate Profile</h2>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={12} lg={6}>
           <label className="field-label"> Name</label>

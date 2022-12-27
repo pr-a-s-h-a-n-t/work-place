@@ -17,7 +17,7 @@ import { async } from "@firebase/util";
 import loadinglogo from "../.../../../../../assets/loadingLogo.gif";
 
 function EmployerProfile() {
-  const navigate = useNavigate();
+  const navigateEmployer = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
   const uid = user.uid;
   const [uploadLoading, setUploadLoading] = useState(0);
@@ -70,17 +70,17 @@ function EmployerProfile() {
 
     // setDoc(docInfo,data)
     //docInfo= doc(database,collection name, docId)
-    try {
-      await setDoc(doc(db, "userInfo", uid), {
-        ...values,
-        type: "employer",
-      });
-      Notification({ message: "profile created successfully" });
-      navigate("/employer/profile");
-    } catch (err) {
-      console.log(err);
-      Notification({ message: "something went wrong" });
-    }
+    // try {
+    //   await setDoc(doc(db, "userInfo", uid), {
+    //     ...values,
+    //     type: "employer",
+    //   });
+    //   Notification({ message: "profile created successfully" });
+    //   navigateEmployer("/employer/profile");
+    // } catch (err) {
+    //   console.log(err);
+    //   Notification({ message: "something went wrong" });
+    // }
   };
 
   const uploadLogo = (e) => {
@@ -220,7 +220,16 @@ function EmployerProfile() {
                       {" "}
                       {disableField ? "Edit" : "save"}
                     </Button>
-                    <Button>Logout</Button>
+                    <Button
+                      onClick={() => {
+                        // on click of logout button redirect user to landing page and
+                        // also clear localStorage.
+                        localStorage.setItem("user", "");
+                        navigateEmployer("/");
+                      }}
+                    >
+                      Logout
+                    </Button>
                   </div>
                 </Grid>
               </Grid>
@@ -319,7 +328,7 @@ function EmployerProfile() {
                 }
               />
             </Grid>
-            <Grid item xs={12} sm={12}></Grid>
+            {/* <Grid item xs={12} sm={12}></Grid> */}
           </Grid>
         </form>
       )}
