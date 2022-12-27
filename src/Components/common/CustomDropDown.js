@@ -55,18 +55,16 @@ function CustomDropDown({
 
   return (
     <div>
-      <FormControl 
-      sx={{ m: 1, width: "200px",
-       height: "2.35rem", 
-      border: "1px solid green" }}>
+       <FormControl sx={{ width: "100%" }}>
         <Select
-        sx={{ width: "200px", height: "2.35rem"}}
+        fullWidth
+        size='small'
         disabled={disabled}
         required={required}
           id="demo-simple-select"
           value={val}
           
-          fullWidth
+          
           onChange={handleChange}
         >
           {dropDownList.map((item) => (
