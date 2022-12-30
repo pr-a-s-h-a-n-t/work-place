@@ -15,7 +15,7 @@ import CandidateOnboarding from "../Components/pages/candidate/candidateOnboardi
 import CandidateProfile from "../Components/pages/candidate/candidateProfile/index";
 import EmployerApplications from "../Components/pages/employer/EmployerApplications";
 import EmployerConversations from "../Components/pages/employer/EmployerConversations";
-import EmployerJobs from "../Components/pages/employer/EmployerJobs";
+import EmployerJobs from "../Components/pages/employer/employerJobs/index";
 import EmployerOnboarding from "../Components/pages/employer/employerOnboarding/index";
 import EmployerProfile from "../Components/pages/employer/employerProfile/index";
 import CandidateHoc from "../HOC/CandidateHoc";
