@@ -101,6 +101,7 @@ function SideBar({ setMobileSectionState, selectedJob, setSelectedJob }) {
             return (
               <SideBarCard
                 job={job}
+                setMobileSectionState={ setMobileSectionState}
                 setSelectedJob={setSelectedJob}
                 selectedJob={selectedJob}
                 key={job.job_id}

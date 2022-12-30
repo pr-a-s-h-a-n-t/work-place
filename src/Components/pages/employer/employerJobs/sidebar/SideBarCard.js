@@ -1,12 +1,15 @@
 import React from "react";
 
-function SideBarCard({ job, setSelectedJob, selectedJob }) {
+function SideBarCard({ job,setMobileSectionState, setSelectedJob, selectedJob }) {
   const { jobTitle, jobLocation, createdAt } = job;
   return (
     <div
-      onClick={() => setSelectedJob(job)}
+      onClick={() => 
+        setMobileSectionState("jobform") || 
+      setSelectedJob(job)}
       className={`sidebar-card-container ${
-        job.job_id === selectedJob?.job_id && `sidebar-card-container-selected`
+        job.job_id === selectedJob?.job_id && 
+        `sidebar-card-container-selected`
       } `}
     >
       <div>{createdAt.toDate().toDateString()}</div>

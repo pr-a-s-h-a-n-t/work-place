@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import React, { useState } from "react";
-import SideBar from "./sidebar/index";
+import Sidebar from "./sidebar/index";
 import JobForm from "./jobform/index";
 function EmployerJobs() {
   const [mobileSectionState, setMobileSectionState] = useState("sidebar");
@@ -18,11 +18,10 @@ function EmployerJobs() {
         xs={12}
         md={4}
       >
-        <SideBar
-          selectedJob={selectedJob}
-          setSelectedJob={setSelectedJob}
-          setMobileSectionState={setMobileSectionState}
-        />
+        <Sidebar 
+        selectedJob={selectedJob}
+        setSelectedJob={setSelectedJob}
+        setMobileSectionState={setMobileSectionState} />
       </Grid>
       <Grid
         item
@@ -35,9 +34,9 @@ function EmployerJobs() {
           },
         }}
       >
-        <JobForm
-           
-        />
+        <JobForm 
+        selectedJob={selectedJob} 
+        setMobileSectionState={setMobileSectionState} />
       </Grid>
     </Grid>
   );
