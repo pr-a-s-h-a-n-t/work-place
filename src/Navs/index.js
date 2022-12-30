@@ -10,7 +10,7 @@ import AuthPage from "../Components/pages/AuthPage";
 import LandingPage from "../Components/LandingPage";
 import CandidateApplications from "../Components/pages/candidate/CandidateApplications";
 import CandidateConversation from "../Components/pages/candidate/CandidateConversation";
-import CandidateJobs from "../Components/pages/candidate/CandidateJobs";
+import CandidateJobs from "../Components/pages/candidate/CandidateJobs/index";
 import CandidateOnboarding from "../Components/pages/candidate/candidateOnboarding/index";
 import CandidateProfile from "../Components/pages/candidate/candidateProfile/index";
 import EmployerApplications from "../Components/pages/employer/EmployerApplications";
