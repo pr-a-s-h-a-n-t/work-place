@@ -12,7 +12,7 @@ import CandidateApplications from "../Components/pages/candidate/CandidateApplic
 import CandidateConversation from "../Components/pages/candidate/CandidateConversation";
 import CandidateJobs from "../Components/pages/candidate/CandidateJobs";
 import CandidateOnboarding from "../Components/pages/candidate/candidateOnboarding/index";
-import CandidateProfile from "../Components/pages/candidate/CandidateProfile";
+import CandidateProfile from "../Components/pages/candidate/candidateProfile/index";
 import EmployerApplications from "../Components/pages/employer/EmployerApplications";
 import EmployerConversations from "../Components/pages/employer/EmployerConversations";
 import EmployerJobs from "../Components/pages/employer/EmployerJobs";
@@ -20,8 +20,6 @@ import EmployerOnboarding from "../Components/pages/employer/employerOnboarding/
 import EmployerProfile from "../Components/pages/employer/employerProfile/index";
 import CandidateHoc from "../HOC/CandidateHoc";
 import EmployerHoc from "../HOC/EmployerHoc";
-
- 
 
 function Navs() {
   const ProtectedCandidateRoute = () => {
@@ -54,15 +52,37 @@ function Navs() {
             path="/candidate/onboarding"
             element={<CandidateOnboarding />}
           />
-          <Route path="/candidate/profile" element={<CandidateHoc><CandidateProfile /></CandidateHoc> } />
-          <Route path="/candidate/jobs" element={<CandidateHoc><CandidateJobs /></CandidateHoc> } />
+          <Route
+            path="/candidate/profile"
+            element={
+              <CandidateHoc>
+                <CandidateProfile />
+              </CandidateHoc>
+            }
+          />
+          <Route
+            path="/candidate/jobs"
+            element={
+              <CandidateHoc>
+                <CandidateJobs />
+              </CandidateHoc>
+            }
+          />
           <Route
             path="/candidate/applications"
-            element={<CandidateHoc><CandidateApplications /></CandidateHoc> }
+            element={
+              <CandidateHoc>
+                <CandidateApplications />
+              </CandidateHoc>
+            }
           />
           <Route
             path="/candidate/conversations"
-            element={<CandidateHoc><CandidateConversation /></CandidateHoc> }
+            element={
+              <CandidateHoc>
+                <CandidateConversation />
+              </CandidateHoc>
+            }
           />
         </Route>
 
@@ -76,22 +96,38 @@ function Navs() {
           <Route path="/employer/onboarding" element={<EmployerOnboarding />} />
 
           <Route
-                        path='/employer/profile'
-                        element={<EmployerHoc> <EmployerProfile /> </EmployerHoc>}
-                    />
-                    <Route
-                        path='/employer/jobs'
-                        element={<EmployerHoc><EmployerJobs /></EmployerHoc> }
-                    />
-                    <Route
-                        path='/employer/applications'
-                        element={<EmployerHoc><EmployerApplications /></EmployerHoc> }
-                    />
-                    <Route
-                        path='/employer/conversations'
-                        element={<EmployerHoc><EmployerConversations /></EmployerHoc>  }
-                    />
-           
+            path="/employer/profile"
+            element={
+              <EmployerHoc>
+                {" "}
+                <EmployerProfile />{" "}
+              </EmployerHoc>
+            }
+          />
+          <Route
+            path="/employer/jobs"
+            element={
+              <EmployerHoc>
+                <EmployerJobs />
+              </EmployerHoc>
+            }
+          />
+          <Route
+            path="/employer/applications"
+            element={
+              <EmployerHoc>
+                <EmployerApplications />
+              </EmployerHoc>
+            }
+          />
+          <Route
+            path="/employer/conversations"
+            element={
+              <EmployerHoc>
+                <EmployerConversations />
+              </EmployerHoc>
+            }
+          />
         </Route>
       </Routes>
     </Router>

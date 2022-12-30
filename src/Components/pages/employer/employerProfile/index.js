@@ -221,12 +221,7 @@ function EmployerProfile() {
                       {disableField ? "Edit" : "save"}
                     </Button>
                     <Button
-                      onClick={() => {
-                        // on click of logout button redirect user to landing page and
-                        // also clear localStorage.
-                        localStorage.setItem("user", "");
-                        navigateEmployer("/");
-                      }}
+                      onClick={() => {}}
                     >
                       Logout
                     </Button>
