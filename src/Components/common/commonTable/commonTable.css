@@ -4,7 +4,8 @@
   align-items: center;
   background-color: #fff;
   width: 90%;
-  /* max-width: 1100px; */
+  font-size: clamp(2px, 1.5vw, 20px);
+   background-color: aquamarine;
   padding: 20px;
   margin: 20px auto;
   box-shadow: 0px 4px 8px rgb(0 0 0 / 20%);
@@ -14,7 +15,7 @@
 .table-head div {
   width: 25%;
   font-weight: 600;
-  font-size: clamp(12px, 1.5vw, 20px);
+  font-size: clamp(8px, 1.5vw, 20px);
   color: #000000;
   text-align: center;
 }
@@ -25,20 +26,24 @@
   background-color: #fff;
   padding: 20px;
   width: 90%;
+  /* justify-content: center; */
+  /* align-items: center; */
   border-radius: 20px;
   margin: 20px auto;
+  border: 2px solid purple;
+  font-size: clamp(8px, 1.5vw, 20px);
 }
 
 .table-row div {
   width: 25%;
   font-weight: 500;
-  font-size: clamp(12px, 1.5vw, 20px);
   color: #000000;
   text-align: center;
+  /* border: 1px solid #000000; */
 }
 
 .resume-btn {
-  background: #7f31d2;
+  background: palevioletred;
   border-radius: 8px;
   color: #fff;
   padding: 5px;
@@ -46,4 +51,28 @@
   text-transform: capitalize;
   text-decoration: none;
   font-weight: 900;
+  font-size: clamp(8px, 1.2vw, 20px);
+  text-align: center;
+
 }
+.action-btn{
+  /* width: clamp(4px, 1.2vw, 20px) ; */
+  font-size: clamp(8px, 1.2vw, 20px);
+  margin-left: 0.4rem;
+  margin-bottom: 0.4rem;
+
+
+}
+.action-btn-hidden{
+  display: none;
+
+}
+
+ 
+
+ 
+
+ 
+
+ 
+

@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import AuthPage from "../Components/pages/AuthPage";
 import LandingPage from "../Components/LandingPage";
-import CandidateApplications from "../Components/pages/candidate/CandidateApplications";
+import CandidateApplications from "../Components/pages/candidate/candidateApplications/index";
 import CandidateConversation from "../Components/pages/candidate/CandidateConversation";
 import CandidateJobs from "../Components/pages/candidate/CandidateJobs/index";
 import CandidateOnboarding from "../Components/pages/candidate/candidateOnboarding/index";

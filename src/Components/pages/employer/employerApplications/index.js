@@ -36,7 +36,7 @@ const columns = [
     width: "10%",
   },
   {
-    title: "Interest shown on",
+    title: "Date",
     dataIndex: "createdAt",
     type: "date",
     width: "15%",
