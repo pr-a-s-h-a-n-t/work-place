@@ -13,7 +13,7 @@ import CandidateConversation from "../Components/pages/candidate/CandidateConver
 import CandidateJobs from "../Components/pages/candidate/CandidateJobs/index";
 import CandidateOnboarding from "../Components/pages/candidate/candidateOnboarding/index";
 import CandidateProfile from "../Components/pages/candidate/candidateProfile/index";
-import EmployerApplications from "../Components/pages/employer/EmployerApplications";
+import EmployerApplications from "../Components/pages/employer/employerApplications/index";
 import EmployerConversations from "../Components/pages/employer/EmployerConversations";
 import EmployerJobs from "../Components/pages/employer/employerJobs/index";
 import EmployerOnboarding from "../Components/pages/employer/employerOnboarding/index";
