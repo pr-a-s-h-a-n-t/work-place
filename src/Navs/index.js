@@ -9,12 +9,12 @@ import {
 import AuthPage from "../Components/pages/AuthPage";
 import LandingPage from "../Components/LandingPage";
 import CandidateApplications from "../Components/pages/candidate/candidateApplications/index";
-import CandidateConversation from "../Components/pages/candidate/CandidateConversation";
+import CandidateConversation from "../Components/pages/candidate/candidateConversations/index";
 import CandidateJobs from "../Components/pages/candidate/CandidateJobs/index";
 import CandidateOnboarding from "../Components/pages/candidate/candidateOnboarding/index";
 import CandidateProfile from "../Components/pages/candidate/candidateProfile/index";
 import EmployerApplications from "../Components/pages/employer/employerApplications/index";
-import EmployerConversations from "../Components/pages/employer/EmployerConversations";
+import EmployerConversations from "../Components/pages/employer/employerConversations/index";
 import EmployerJobs from "../Components/pages/employer/employerJobs/index";
 import EmployerOnboarding from "../Components/pages/employer/employerOnboarding/index";
 import EmployerProfile from "../Components/pages/employer/employerProfile/index";

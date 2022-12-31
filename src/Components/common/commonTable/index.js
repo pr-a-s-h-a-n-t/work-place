@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import "./commonTable.css";
-
+ 
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
 import PendingActionsIcon from "@mui/icons-material/PendingActions";
