@@ -1,9 +1,10 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import "./commonTable.css";
-import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
+
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
+import PendingActionsIcon from "@mui/icons-material/PendingActions";
 function CommmonTable({ data, columns, handleClick = null }) {
   return (
     <div style={{ maxWidth: "90%", margin: "auto" }}>
@@ -48,7 +49,7 @@ function CommmonTable({ data, columns, handleClick = null }) {
                       }}
                       key={j}
                     >
-                      <HourglassEmptyIcon
+                      <PendingActionsIcon
                         sx={{
                           color: "#FFC107",
                         }}
@@ -72,7 +73,7 @@ function CommmonTable({ data, columns, handleClick = null }) {
                           color: "red",
                         }}
                       />
-                      <div> Rejected</div>
+                      <div className="rejected"> Rejected</div>
                     </div>
                   );
                 } else {
@@ -91,14 +92,14 @@ function CommmonTable({ data, columns, handleClick = null }) {
                           color: "green",
                         }}
                       />
-                      <div> Accepted</div>
+                      <div className="accepted"> Accepted</div>
                     </div>
                   );
                 }
               } else if (column.type === "file") {
                 return (
                   <a
-                  key={j}
+                    key={j}
                     className="resume-btn"
                     href={row[column.dataIndex]}
                     target="__blank"
@@ -106,15 +107,26 @@ function CommmonTable({ data, columns, handleClick = null }) {
                     View resume
                   </a>
                 );
-              } else if (column.type === "action") {
+              } else if (
+                column.type === "action"
+                /* && row["status"] !== "accepted"  */
+              ) {
                 return (
-                  <div key={j}>
+                  <div
+                    key={j}
+                    // className={  `${row["status"] === "accepted"} ? action-btn-div-hidden  : action-btn-div`}
+                  >
                     {column.childrenAction.map((item, p) => {
                       return (
                         // row.status
                         //row['status']
 
                         <button
+                          className={
+                            row["status"] === "accepted"
+                              ? "action-btn-hidden"
+                              : "action-btn "
+                          }
                           key={p}
                           disabled={row["status"] === "accepted" ? true : false}
                           onClick={() => handleClick(item.action, row)}
