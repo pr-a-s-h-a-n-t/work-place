@@ -14,13 +14,13 @@ import { v4 as uuid } from "uuid";
 
 //  bottom navigation
 
-import Box from "@mui/material/Box";
-import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { purple } from "@mui/material/colors";
+// import Box from "@mui/material/Box";
+// import BottomNavigation from "@mui/material/BottomNavigation";
+// import BottomNavigationAction from "@mui/material/BottomNavigationAction";
+// import RestoreIcon from "@mui/icons-material/Restore";
+// import FavoriteIcon from "@mui/icons-material/Favorite";
+// import LocationOnIcon from "@mui/icons-material/LocationOn";
+// import { purple } from "@mui/material/colors";
 
 function MessageArea({
   allConversations,
@@ -85,7 +85,7 @@ function MessageArea({
   }, [currentSelectedMessage, allConversations]);
   return (
     <div>
-      {/* <Button
+      <Button
         variant="contained"
         color="primary"
         sx={{
@@ -98,14 +98,14 @@ function MessageArea({
         onClick={() => setSelectedSectionMobile("sidebar")}
       >
         back
-      </Button> */}
+      </Button>
       <Messagearea
         allConversations={allConversations}
         submitMessage={submitMessage}
       />
-      <Box sx={{ width: "100%" , margin: "auto"}}>
+      {/* <Box sx={{ width: "100%" , margin: "auto"}}>
         <BottomNavigation
-        //  md={3}
+        
           sx={{
             display: {
               xs: "block",
@@ -131,7 +131,7 @@ function MessageArea({
             back
           </Button>
         </BottomNavigation>
-      </Box>
+      </Box> */}
     </div>
   );
 }

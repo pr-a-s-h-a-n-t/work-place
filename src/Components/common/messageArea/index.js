@@ -36,6 +36,7 @@ function MessageArea({ allConversations, submitMessage }) {
           margin: "auto",
           display: "flex",
           flexDirection: "column",
+          //  paddingRight: "2rem",
           // justifyContent: "space-between",
         }}
       >
