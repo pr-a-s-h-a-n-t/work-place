@@ -19,6 +19,7 @@ function SideBar({ lastMessages, handleClick, currentSelectedMessage }) {
               onClick={() => handleClick(message)}
             >
               <h2>{message.candidate_name}</h2>
+
               <p>{message.last_message}</p>
             </div>
           );

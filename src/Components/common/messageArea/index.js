@@ -26,6 +26,7 @@ function MessageArea({ allConversations, submitMessage }) {
     submitMessage(text);
     setText("");
   };
+
   return (
     allConversations && (
       <form
@@ -36,7 +37,6 @@ function MessageArea({ allConversations, submitMessage }) {
           margin: "auto",
           display: "flex",
           flexDirection: "column",
-          //  paddingRight: "2rem",
           // justifyContent: "space-between",
         }}
       >
@@ -44,7 +44,7 @@ function MessageArea({ allConversations, submitMessage }) {
           style={{
             display: "grid",
             gridGap: "10px",
-            padding: "2.5rem 0.8rem",
+            padding: "2.5rem  0.4rem 2.5rem 0",
           }}
         >
           {sortedConversations &&
@@ -108,7 +108,7 @@ function MessageArea({ allConversations, submitMessage }) {
             <Button type="submit">
               <SendIcon
                 sx={{
-                  color: user.type === "candidate" ? "green" : "blue",
+                  color: "orange",
                 }}
               />
             </Button>

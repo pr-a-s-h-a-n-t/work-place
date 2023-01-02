@@ -1,13 +1,14 @@
 .container {
   min-height: 80vh;
-  background: #ebebeb;
+
   overflow: scroll;
   border-radius: 10px;
   border: 2px solid violet;
+  margin-left: 0.5rem;
   height: 85vh;
-           overflow-y:scroll;
-          max-width:  95%;
-          overflow-wrap: break-word; 
+  overflow-y: scroll;
+  max-width: 95%;
+  overflow-wrap: break-word;
 }
 
 .selected-card {
@@ -17,8 +18,11 @@
   margin: 10px;
   border-left: 4px solid #7f31d2;
   border-right: 4px solid #7f31d2;
-  overflow-wrap: break-word; 
+  overflow-wrap: break-word;
+  word-break: break-all;
+  height: 10rem;
 
+  overflow-y: hidden;
 }
 
 .card {
@@ -26,6 +30,10 @@
   padding: 1px 10px;
   margin: 1rem 0.4rem;
   margin: 10px;
-    
-
+  height: 10rem;
+  overflow-y: hidden;
+  padding-bottom: 0.2rem;
+  border-left: 4px solid grey;
+  border-right: 4px solid grey;
+  word-break: break-all;
 }
