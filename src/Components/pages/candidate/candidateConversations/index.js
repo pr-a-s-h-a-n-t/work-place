@@ -46,7 +46,7 @@ function EmployerConversation() {
         maxWidth: "100%",
         height: "85vh",
         paddingTop: "1rem  ",
-        color: state.shades.new,
+        color: state.shades.secondary,
         backgroundColor: state.shades.primary,
       }}
     >

@@ -12,16 +12,6 @@ import Messagearea from "../../../../common/messageArea/index";
 import { db } from "../../../../../firebaseConfig/index";
 import { v4 as uuid } from "uuid";
 
-//  bottom navigation
-
-// import Box from "@mui/material/Box";
-// import BottomNavigation from "@mui/material/BottomNavigation";
-// import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-// import RestoreIcon from "@mui/icons-material/Restore";
-// import FavoriteIcon from "@mui/icons-material/Favorite";
-// import LocationOnIcon from "@mui/icons-material/LocationOn";
-// import { purple } from "@mui/material/colors";
-
 function MessageArea({
   allConversations,
   setSelectedSectionMobile,

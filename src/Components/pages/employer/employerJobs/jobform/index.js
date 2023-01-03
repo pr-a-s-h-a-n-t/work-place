@@ -17,6 +17,7 @@ import { Notification } from "../../../../../utils/Notifications";
 import { setDoc, doc, getDoc } from "firebase/firestore";
 import { db } from "../../../../../firebaseConfig/index";
 import RTE from "../../../../common/RTE";
+import { DarkmodeContext } from "../../../../../contex/darkmode/index";
 
 const innitialValues = {
   jobTitle: "",
@@ -32,6 +33,8 @@ const innitialValues = {
   skills: [],
 };
 function JobForm({ setMobileSectionState, selectedJob }) {
+  const [state, dispatch] = React.useContext(DarkmodeContext);
+
   const [jobData, setJobData] = useState({
     ...innitialValues,
   });
@@ -90,16 +93,30 @@ function JobForm({ setMobileSectionState, selectedJob }) {
     }
   };
   return (
-    <div>
+    <div
+      style={{
+        color: state.shades.secondary,
+        backgroundColor: state.shades.primary,
+      }}
+    >
       <Button
+        variant="contained"
+        color="primary"
         sx={{
           display: { xs: "block", md: "none" },
+          margin: "4px",
         }}
         onClick={() => setMobileSectionState("sidebar")}
       >
         back
       </Button>
-      <form onSubmit={(e) => submitJob(e)}>
+      <form
+        onSubmit={(e) => submitJob(e)}
+        style={{
+          color: state.shades.secondary,
+          backgroundColor: state.shades.primary,
+        }}
+      >
         <Grid className="form-container" container>
           <Grid item xs={12} md={6}>
             <label className="text-label">Job Title</label>
@@ -188,6 +205,7 @@ function JobForm({ setMobileSectionState, selectedJob }) {
           <Grid item xs={12} md={6}>
             <label className="text-label">skills</label>
             <SearchDropDown
+              // sx={{color: 'primary  '}}
               required={true}
               dropDownList={SkillsDownList}
               onChange={(data) => handleSkillsInput(data)}

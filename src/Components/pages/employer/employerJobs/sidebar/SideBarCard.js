@@ -1,9 +1,19 @@
 import React from "react";
+import { DarkmodeContext } from "../../../../../contex/darkmode/index";
+
 
 function SideBarCard({ job,setMobileSectionState, setSelectedJob, selectedJob }) {
   const { jobTitle, jobLocation, createdAt } = job;
+  const [state, dispatch] = React.useContext(DarkmodeContext);
+  
   return (
     <div
+  style={{
+        color: state.shades.secondary,
+        backgroundColor: state.shades.primary,
+     
+    }}
+
       onClick={() => 
         setMobileSectionState("jobform") || 
       setSelectedJob(job)}

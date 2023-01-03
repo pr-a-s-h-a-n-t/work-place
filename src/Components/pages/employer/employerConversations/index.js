@@ -71,9 +71,7 @@ function EmployerConversation() {
           height: "94%",
           overflowY: "auto",
           overflowX: "hidden",
-          // backgroundColor: "",
-           borderLeft: "10px solid black",
-          boxShadow:"10px 5px 5px green",
+          borderLeft: "10px solid black",
           boxSizing: "border-box",
           overflowWrap: "break-word",
         }}

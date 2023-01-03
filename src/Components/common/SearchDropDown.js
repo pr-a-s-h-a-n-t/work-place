@@ -1,6 +1,7 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import { DarkmodeContext } from "../../contex/darkmode/index";
 
 function SearchDropDown({
   dropDownList,
@@ -9,8 +10,11 @@ function SearchDropDown({
   disabled,
   required
 }) {
+  const [state, dispatch] = React.useContext(DarkmodeContext);
+
   return (
     <Autocomplete
+   
     fullWidth
     size='small'
     disabled={disabled}
@@ -20,9 +24,11 @@ function SearchDropDown({
       }}
       id="combo-box-demo"
       options={dropDownList}
-      sx={{ width:  "100%" }}
-      renderInput={(params) => <TextField fullWidth
-          size='small' required={required} {...params} label="skills" />}
+       
+      renderInput={(params) => <TextField 
+       
+      fullWidth
+          size='small' required={required} {...params} />}
     />
   );
 }

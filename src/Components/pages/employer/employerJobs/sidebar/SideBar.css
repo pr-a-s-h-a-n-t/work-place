@@ -1,5 +1,5 @@
 .sidebar-container {
-  background: #ffffff;
+  background:  inherit;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   height: 85vh;
   overflow-y: scroll;
@@ -14,7 +14,7 @@
   font-weight: 600;
   font-size: 28px;
   line-height: 34px;
-  color: #7f31d2;
+  color: inherit;
   margin: auto;
 }
 .post-job-btn:hover {
@@ -26,7 +26,7 @@
   font-size: 15px;
   line-height: 18px;
 
-  color: #8c8c8c;
+  color: inherit;
 }
 .sidebar-card-container {
   padding: 20px 30px;
@@ -36,7 +36,7 @@
   cursor: pointer;
 }
 .sidebar-card-container-selected {
-  background: #f2f2f2;
+  background: inherit;
   border-radius: 10px;
   border-left: 5px solid #7f31d2;
   border-right: 5px solid #7f31d2;
@@ -51,19 +51,19 @@
   font-size: 12px;
   line-height: 14px;
 
-  color: #959595;
+  color: inherit;
 }
 .sidebar-card-container :nth-child(2) {
   font-weight: 500;
   font-size: 22px;
   line-height: 26px;
 
-  color: #000000;
+  color: inherit;
 }
 .sidebar-card-container :nth-child(3) {
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
 
-  color: #959595;
+  color: inherit;
 }

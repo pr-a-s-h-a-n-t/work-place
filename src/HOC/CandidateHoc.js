@@ -85,10 +85,7 @@ function CandidateHoc({ children }) {
               sx={{
                 width: "auto",
                 display: { xs: "none", md: "flex" },
-                //    border: "1px solid red"
                 paddingTop: "20px",
-                //       color: state.shades.secondary,
-                // backgroundColor: state.shades.primary,
               }}
             >
               <img
@@ -156,8 +153,6 @@ function CandidateHoc({ children }) {
                 sx={{
                   width: "auto",
                   color: state.shades.secondary,
-
-                  //    border: "1px solid red"
                   paddingTop: "20px",
                 }}
               >

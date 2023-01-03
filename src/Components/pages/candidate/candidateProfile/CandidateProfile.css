@@ -18,8 +18,7 @@
   }
   .candidate-btn-container{
     display: flex;
-    width: 100%;
-     
+    width: 100%; 
      background-color: inherit;
       justify-content: center;
       margin:auto ;

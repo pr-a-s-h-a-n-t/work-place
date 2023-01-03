@@ -6,11 +6,6 @@ import SendIcon from "@mui/icons-material/Send";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { DarkmodeContext } from "../../../contex/darkmode/index";
 
- 
-
-
-
-
 function MessageArea({ allConversations, submitMessage }) {
   const [state, dispatch] = React.useContext(DarkmodeContext);
   const [text, setText] = useState("");
@@ -45,12 +40,12 @@ function MessageArea({ allConversations, submitMessage }) {
           display: "flex",
           flexDirection: "column",
           color: state.shades.secondary,
-        backgroundColor: state.shades.primary,
+          backgroundColor: state.shades.primary,
           // justifyContent: "space-between",
-          
         }}
       >
-        <div className="message-container"
+        <div
+          className="message-container"
           style={{
             display: "grid",
             gridGap: "10px",
@@ -80,7 +75,7 @@ function MessageArea({ allConversations, submitMessage }) {
                           sx={{
                             fontSize: "16px",
                             marginLeft: "5px",
-                            color: conversation.seen ? "green" : "gray",
+                            color: conversation.seen ? "blue" : "gray",
                           }}
                         />
                       )}

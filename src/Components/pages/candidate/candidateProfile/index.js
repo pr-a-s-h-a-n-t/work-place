@@ -141,7 +141,7 @@ function CandidateProfile() {
       {loading ? (
         <div>
           <img
-            style={{ width: "inherit", maxWidth: "100%" }}
+            style={{ width: '100%', height: '100vh' }}
             src={loadingGif}
             alt="loading"
           />

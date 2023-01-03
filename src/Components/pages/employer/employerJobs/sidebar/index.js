@@ -5,8 +5,12 @@ import SearchIcon from "@mui/icons-material/Search";
 import SideBarCard from "./SideBarCard";
 import { collection, query, where, onSnapshot } from "firebase/firestore";
 import { db } from "../../../../../firebaseConfig/index";
+import { DarkmodeContext } from "../../../../../contex/darkmode/index";
+
 
 function SideBar({ setMobileSectionState, selectedJob, setSelectedJob }) {
+  const [state, dispatch] = React.useContext(DarkmodeContext);
+  
   const [jobs, setJobs] = useState(null);
   const [jobearch, setJobSearch] = useState(null);
   const [search, setSearch] = useState("");
@@ -51,7 +55,11 @@ function SideBar({ setMobileSectionState, selectedJob, setSelectedJob }) {
     }
   }, [search]);
   return (
-    <div className="sidebar-container">
+    <div className="sidebar-container" 
+    style={{
+      color: state.shades.secondary,
+        backgroundColor: state.shades.primary,
+    }}>
       <div
         style={{
           position: "sticky",
@@ -59,9 +67,16 @@ function SideBar({ setMobileSectionState, selectedJob, setSelectedJob }) {
           top: "0",
           zIndex: "2",
           padding: "5px",
+          color: state.shades.secondary,
+        backgroundColor: state.shades.primary,
         }}
       >
         <button
+style={{
+  color: state.shades.secondary,
+        backgroundColor: state.shades.solutionCardBackground,
+       
+}}
           className="post-job-btn"
           onClick={() => {
             setMobileSectionState("jobform");
@@ -78,6 +93,10 @@ function SideBar({ setMobileSectionState, selectedJob, setSelectedJob }) {
             div: {
               boxShadow: " 0px 1px 4px rgba(0, 0, 0, 0.25)",
               borderRadius: " 45px",
+              // state.shades.secondary,
+              border: " 1px solid green",
+         color: state.shades.secondary,
+       
             },
           }}
           placeholder="Search Jobs"

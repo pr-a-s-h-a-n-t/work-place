@@ -2,7 +2,6 @@
   font-weight: 800;
   display: flex;
   margin: 10px;
-   
 }
 .onboarding-container {
   max-width: 80%;
@@ -14,18 +13,34 @@
 }
 .btn-container {
   display: flex;
+
+  flex-direction: column;
   width: 100%;
   justify-content: flex-end;
-  margin: 20px;
+  margin: auto;
 }
 .btn-container button {
-  background: #7f31d2;
+  /* background: #7f31d2;
   border-radius: 8px;
   color: white;
   padding: 5px 10px;
   font-size: clamp(10px, 1.5vw, 15px);
   text-transform: none;
-  margin: 10px;
+  margin: 10px; */
+  background: greenyellow;
+  border-radius: 8px;
+  width: 6rem;
+  height: 2rem;
+  color: white;
+  padding: 10px 20px;
+  margin: 0.3rem;
+  font-size: clamp(13px, 1.2vw, 22px);
+  text-transform: none;
+  
+}
+.btn-container button:hover {
+  color: red;
+  background: #4943da;
 }
 .upload-btn-container {
   display: flex;

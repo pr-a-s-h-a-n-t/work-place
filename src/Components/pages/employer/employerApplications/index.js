@@ -12,6 +12,8 @@ import CommonTable from "../../../common/commonTable/index";
 // import { doc, deleteDoc } from "firebase/firestore";
 import { Notification } from "../../../../utils/Notifications";
 import { v4 as uuid } from "uuid";
+import { DarkmodeContext } from "../../../../contex/darkmode/index";
+
 
 const columns = [
   {
@@ -57,6 +59,8 @@ const columns = [
   },
 ];
 function EmployerApplicants() {
+const [state, dispatch] = React.useContext(DarkmodeContext);
+
   const userInfo = JSON.parse(localStorage.getItem("user"));
   const [allApplications, setAllApplications] = useState(null);
   let employerId = userInfo.uid;

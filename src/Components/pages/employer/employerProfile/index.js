@@ -15,8 +15,10 @@ import {
 import { storage } from "../../../../firebaseConfig/index";
 import { async } from "@firebase/util";
 import loadinglogo from "../.../../../../../assets/loadingLogo.gif";
+import { DarkmodeContext } from "../../../../contex/darkmode/index";
 
 function EmployerProfile() {
+  const [state, dispatch] = React.useContext(DarkmodeContext);
   const navigateEmployer = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
   const uid = user.uid;
@@ -142,17 +144,27 @@ function EmployerProfile() {
     }
   };
   return (
-    <>
+    <div
+      sx={{
+        color: state.shades.secondary,
+        backgroundColor: state.shades.primary,
+      }}
+    >
       {loading ? (
         <div>
           <img
-            style={{ width: "inherit", maxWidth: "100%" }}
+            style={{ width: "100%", height: "100vh" }}
             src={loadinglogo}
             alt="loading"
           />
         </div>
       ) : (
-        <form onSubmit={(e) => submit(e)} className="onboarding-container">
+        <form 
+        style={{
+            color: state.shades.secondary,
+            backgroundColor: state.shades.primary,
+          }}
+        onSubmit={(e) => submit(e)} className="onboarding-container">
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <Grid container spacing={2}>
@@ -214,17 +226,18 @@ function EmployerProfile() {
                     }
                   />
                 </Grid>
-                <Grid item xs={12} md={2}>
-                  <div className="btn-container">
+                <Grid item xs={12} md={2} >
+                  <div 
+                  style={{
+                  color: state.shades.secondary,
+                  backgroundColor: state.shades.primary,
+                }}
+                  className="btn-container">
                     <Button onClick={makeEditable}>
                       {" "}
                       {disableField ? "Edit" : "save"}
                     </Button>
-                    <Button
-                      onClick={() => {}}
-                    >
-                      Logout
-                    </Button>
+                    <Button onClick={() => {}}>Logout</Button>
                   </div>
                 </Grid>
               </Grid>
@@ -323,11 +336,10 @@ function EmployerProfile() {
                 }
               />
             </Grid>
-            {/* <Grid item xs={12} sm={12}></Grid> */}
           </Grid>
         </form>
       )}
-    </>
+    </div>
   );
 }
 
