@@ -2,7 +2,8 @@ import { Label } from "@mui/icons-material";
 import { Button, Divider, Grid, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { doc, setDoc, getDoc } from "firebase/firestore";
-import { db } from "../../../../firebaseConfig/index";
+import { db, auth } from "../../../../firebaseConfig/index";
+
 import "./EmployerProfile.css";
 import { Notification } from "../../../../utils/Notifications";
 import { useNavigate } from "react-router-dom";
@@ -16,9 +17,13 @@ import { storage } from "../../../../firebaseConfig/index";
 import { async } from "@firebase/util";
 import loadinglogo from "../.../../../../../assets/loadingLogo.gif";
 import { DarkmodeContext } from "../../../../contex/darkmode/index";
+import {userContext} from '../../../../contex/usercontex/index'
+
+
 
 function EmployerProfile() {
-  const [state, dispatch] = React.useContext(DarkmodeContext);
+  const [state, dispatch] = React.useContext(DarkmodeContext, userContext);
+
   const navigateEmployer = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
   const uid = user.uid;
@@ -136,13 +141,22 @@ function EmployerProfile() {
           {
             ...values,
           },
-          { merge: true }
+          { merge: true },
+          Notification({ message: "profile created successfully",
+      type:'success'})
         );
+        
       } catch (err) {
         Notification({ message: "something went wrong" });
       }
     }
   };
+  
+  const logout = () => {
+    auth.signOut();
+    dispatch({type:"LOGOUT"})
+    navigateEmployer("/employer/auth");
+  }
   return (
     <div
       sx={{
@@ -237,7 +251,7 @@ function EmployerProfile() {
                       {" "}
                       {disableField ? "Edit" : "save"}
                     </Button>
-                    <Button onClick={() => {}}>Logout</Button>
+                    <Button onClick={logout}>Logout</Button>
                   </div>
                 </Grid>
               </Grid>

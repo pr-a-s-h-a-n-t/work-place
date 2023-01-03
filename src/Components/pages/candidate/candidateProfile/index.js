@@ -19,9 +19,13 @@ import {
 import { DarkmodeContext } from "../../../../contex/darkmode/index";
 import { InputLabel } from "@mui/material";
 import { color } from "@mui/system";
+import {userContext} from '../../../../contex/usercontex/index'
+
+
+
 function CandidateProfile() {
   const navigate = useNavigate();
-  const [state, dispatch] = React.useContext(DarkmodeContext);
+  const [state, dispatch] = React.useContext(DarkmodeContext, userContext);
 
   const [uploadLoading, setUploadLoading] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -53,11 +57,15 @@ function CandidateProfile() {
         ...values,
         type: "candidate",
       });
-      Notification({ message: "profile created successfully" });
+      Notification({ message: "profile created successfully",
+      type:'success'
+    });
       navigate("/candidate/profile");
     } catch (err) {
       console.log(err);
-      Notification({ message: "something went wrong" });
+      Notification({ message: "something went wrong",
+      type:'error'
+    });
     }
   };
 
@@ -121,7 +129,7 @@ function CandidateProfile() {
         setValues({ ...doc.data() });
       } else {
         // doc.data() will be undefined in this case
-        console.log("No such document!");
+        // console.log("No such document!");
         Notification({ message: "No profile found" });
       }
       setLoading(false);
@@ -130,6 +138,12 @@ function CandidateProfile() {
   const makeEditable = () => {
     setDisableFields((prevState) => !prevState);
   };
+
+  const logout = () => {
+    auth.signOut();
+    dispatch({type:"LOGOUT"})
+    navigate("/candidate/auth");
+  }
 
   return (
     <div
@@ -171,7 +185,7 @@ function CandidateProfile() {
                   {" "}
                   {disableFields ? "Edit" : "save"}
                 </Button>
-                <Button onClick={() => {}}>Logout</Button>
+                <Button onClick={logout}>Logout</Button>
               </div>
             </Grid>
             <Grid item xs={12} md={6}>

@@ -19,7 +19,7 @@ import { DarkmodeContext } from "../contex/darkmode/index";
 
 const pages = [
   {
-    name: "jobs",
+    name: "Jobs",
     path: "/candidate/jobs",
   },
   {

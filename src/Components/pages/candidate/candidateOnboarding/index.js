@@ -212,7 +212,7 @@ function CandidateOnboarding() {
             <div className="skills-container">
               {values.skills.map((skill, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     <div>{skill}</div>
                     <CancelRoundedIcon
                       color="error"

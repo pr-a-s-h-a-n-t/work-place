@@ -20,25 +20,36 @@ import EmployerOnboarding from "../Components/pages/employer/employerOnboarding/
 import EmployerProfile from "../Components/pages/employer/employerProfile/index";
 import CandidateHoc from "../HOC/CandidateHoc";
 import EmployerHoc from "../HOC/EmployerHoc";
-
+import { userContext } from "../contex/usercontex/index";
 import { DarkmodeContext } from "../contex/darkmode/index";
 import { Grid } from "@mui/material";
 import { red } from "@mui/material/colors";
 
 function Navs() {
+  const [state, dispatch] = useContext(userContext);
+  const isAuth = state.isAuth;
+  const userInfo = state.userInfo;
   const ProtectedCandidateRoute = () => {
-    const [state, dispatch] = useContext(DarkmodeContext);
-    if (true) {
+    if (isAuth && userInfo?.type === "candidate") {
+      console.log(isAuth);
       return <Outlet />;
     } else {
-      return <Navigate to="./candidate/auth" />;
+      return <Navigate to="/candidate/auth" />;
     }
   };
   const ProtectedEmployerRoute = () => {
-    if (true) {
+    if (isAuth && userInfo?.type === "employer") {
       return <Outlet />;
     } else {
-      return <Navigate to="./employer/auth" />;
+      return <Navigate to="/employer/auth" />;
+    }
+  };
+
+  const OnboardingProtectedRoute = () => {
+    if (isAuth) {
+      return <Outlet />;
+    } else {
+      return <Navigate to="/" />;
     }
   };
 
@@ -56,12 +67,17 @@ function Navs() {
 
           {/* we dont want user to access the Candidate profile, Candidate jobs,Candidate application and Candidate conversations section without login */}
           {/* to achieve this functionality we are going to use   PROTECTED ROUTE */}
-
-          <Route element={<ProtectedCandidateRoute />}>
+          <Route element={<OnboardingProtectedRoute />}>
             <Route
               path="/candidate/onboarding"
               element={<CandidateOnboarding />}
             />
+          </Route>
+          <Route element={<ProtectedCandidateRoute />}>
+            {/* <Route
+              path="/candidate/onboarding"
+              element={<CandidateOnboarding />}
+            /> */}
             <Route
               path="/candidate/profile"
               element={
@@ -101,12 +117,17 @@ function Navs() {
 
           {/* we dont want user to access the employer profile, employer   jobs,employer application and employer conversations section without login */}
           {/* to achieve this functionality we are going to use   PROTECTED ROUTE */}
-
-          <Route element={<ProtectedEmployerRoute />}>
+          <Route element={<OnboardingProtectedRoute />}>
             <Route
               path="/employer/onboarding"
               element={<EmployerOnboarding />}
             />
+          </Route>
+          <Route element={<ProtectedEmployerRoute />}>
+            {/* <Route
+              path="/employer/onboarding"
+              element={<EmployerOnboarding />}
+            /> */}
 
             <Route
               path="/employer/profile"

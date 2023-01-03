@@ -114,7 +114,7 @@ function MessageArea({ allConversations, submitMessage }) {
             <Button type="submit">
               <SendIcon
                 sx={{
-                  color: "orange",
+                  color: "green",
                 }}
               />
             </Button>
