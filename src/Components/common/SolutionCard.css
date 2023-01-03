@@ -16,8 +16,8 @@
 }
 
 .solutionCard-container:hover {
-    background: #4540DB;
-    color: #FFFFFF !important;
+    /* background: violet; */
+    color: red !important;
 }
 
 .solutionCard-title :first-child {
@@ -25,16 +25,16 @@
     color: inherit;
     font-size: clamp(15px, 1.7vw, 25px);
     line-height: clamp(15px, 1.8vw, 29px);
-    color: #000000;
+    /* color: #000000; */
 }
 
 .solutionCard-title :first-child:hover {
-    color: #FFFFFF;
+    /* color: #FFFFFF; */
 }
 
 .solutionCard-title :last-child {
     font-style: normal;
     font-weight: 400;
     font-size: clamp(10px, 1.2vw, 18px);
-    color: #000000;
+    /* color: #000000; */
 }

@@ -14,6 +14,10 @@ import {
 import Logo from "../../src/assets/workPlaceLogo.png";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom";
+import ModeToggle from "../Components/common/ModeToggle";
+import { DarkmodeContext } from "../contex/darkmode/index";
+
+
 const pages = [
     {
       name: "jobs",
@@ -37,6 +41,7 @@ const pages = [
 
 function EmployerHoc(  {children} ) {
   const navigate = useNavigate();
+  const [state, dispatch] = React.useContext(DarkmodeContext);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -71,6 +76,8 @@ function EmployerHoc(  {children} ) {
               display: { xs: "none", md: "flex" },
               //    border: "1px solid red"
               paddingTop: "20px",
+              color: state.shades.secondary,
+        backgroundColor: state.shades.primary,
             }}
           >
             <img
@@ -114,7 +121,11 @@ function EmployerHoc(  {children} ) {
                   key={page.name}
                   onClick={() => handleNavigate(page.path)}
                 >
-                  <Typography textAlign="center">{page.name}</Typography>
+                  <Typography 
+                    sx={{
+                    color: state.shades.secondary,
+                  }}
+                   textAlign="center">{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -148,9 +159,10 @@ function EmployerHoc(  {children} ) {
                 onClick={() => handleNavigate(page.path)}
                 sx={{
                   my: 2,
-                  color: "black",
+                  // color: "black",
                   display: "block",
                   padding: "0 2rem",
+                  color: state.shades.secondary,
                 }}
               >
                 {page.name}
@@ -158,12 +170,20 @@ function EmployerHoc(  {children} ) {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip>
               <Button onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Typography sx={{ color: "black" }}>Dark Mode</Typography>
               </Button>
             </Tooltip>
+          </Box> */}
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="mode">
+            
+              <ModeToggle />
+            
+            </Tooltip>
+           
           </Box>
         </Toolbar>
       </Container>

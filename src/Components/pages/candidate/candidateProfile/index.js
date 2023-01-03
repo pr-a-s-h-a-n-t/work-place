@@ -16,10 +16,14 @@ import {
   SkillsDownList,
   yearsOfExperience,
 } from "../../../../constants";
+import { DarkmodeContext } from "../../../../contex/darkmode/index";
+
  
 
 function CandidateProfile() {
   const navigate = useNavigate();
+  const [state, dispatch] = React.useContext(DarkmodeContext);
+
    
   const [uploadLoading, setUploadLoading] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -142,7 +146,10 @@ function CandidateProfile() {
         </div>
       ) : (
         <form onSubmit={(e) => submit(e)} className="candidate-onboarding-container">
-          <Grid container spacing={2}>
+          <Grid container spacing={2} sx={{
+            color: state.shades.secondary,
+        backgroundColor: state.shades.primary,
+          }}>
             <Grid item xs={12} md={12} lg={12}  
              
              >

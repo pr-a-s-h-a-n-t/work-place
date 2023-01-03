@@ -2,10 +2,19 @@ import React from "react";
 import "./JobCard.css";
 // import companyLogo from './company-logo.png'
 import EllipseFeaturedJobSection from "../../assets/Ellipse-featuredJobsection.png"
+import { DarkmodeContext } from '../../contex/darkmode';
 
+ 
 function JobCard() {
+  const[ state, dispatch ] = React.useContext(DarkmodeContext)
+  
   return (
-    <div className="outer">
+    <div className="outer" 
+    style={{
+            color: state.shades.secondary,
+            backgroundColor: state.shades.solutionCardBackground,
+          }}
+    >
       <div className="jobCard">
         <div className="company">
           <div className="image">

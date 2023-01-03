@@ -4,8 +4,10 @@ import { db } from "../../../../firebaseConfig/index";
 import React, { useEffect, useState } from "react";
 import MessageArea from "./messageArea/index";
 import SideBar from "./sidebar/index";
+import { DarkmodeContext } from "../../../../contex/darkmode/index";
 
 function EmployerConversation() {
+  const [state, dispatch] = React.useContext(DarkmodeContext);
   const [allConversations, setAllConversations] = useState(null);
   const [selectedSectionMobile, setSelectedSectionMobile] = useState("sidebar");
   const [currentSelectedMessage, setCurrentSelectedMessage] = useState(null);
@@ -47,7 +49,10 @@ function EmployerConversation() {
         maxWidth: "100%",
         height: "85vh",
         paddingTop: "1rem  ",
+        color: state.shades.new,
+        backgroundColor: state.shades.primary,
       }}
+       
     >
       <Grid
         sx={{

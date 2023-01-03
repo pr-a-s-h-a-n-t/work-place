@@ -1,5 +1,5 @@
 
-import React from "react";
+import React  from "react";
 import SolutionCard from "../common/SolutionCard";
 import "./LandingPage.css";
 import VectormarketingCardLogo from "../../assets/Vector-marketing.png";
@@ -10,6 +10,9 @@ import VectorcustomerCardLogo from "../../assets/Vector-customer.png";
 import VectorbusinessCardLogo from "../../assets/Vector-business.png";
 import HumanresearchCardLogo from "../../assets/humanResearch.png";
 import ProjectmanagementCardLogo from "../../assets/project.png"; 
+import { DarkmodeContext } from "../../contex/darkmode/index";
+  
+  
 
 
 
@@ -58,8 +61,16 @@ const dataList = [
 ];
 
 export default function OnPlatform() {
+  const [state, dispatch] = React.useContext(DarkmodeContext);
+  
   return (
-    <div className="onePlateform-container">
+    <div 
+    style={{
+      color: state.shades.secondary,
+        backgroundColor: state.shades.primary,
+     
+    }}
+    className="onePlateform-container">
       <h1>
         One Plateform many <span>Solution</span>
       </h1>
