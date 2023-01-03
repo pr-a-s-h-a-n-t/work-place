@@ -1,8 +1,16 @@
 import { Button, Grid } from "@mui/material";
 import React from "react";
 import "./candidatejobs.css";
+import { DarkmodeContext } from "../../../../contex/darkmode/index";
+ 
+   
+
+
+
+
 function CandidateJobCard({ job,applyonJob }) {
-  console.log(job);
+  const [state, dispatch] = React.useContext(DarkmodeContext);
+  // console.log(job);
   const {
     company_logo,
     company_name,
@@ -13,12 +21,18 @@ function CandidateJobCard({ job,applyonJob }) {
     createdAt,
   } = job;
   return (
-    <div className="candidate-jobCard">
+    <div className="candidate-jobCard"
+    style={{
+              color: state.shades.secondary,
+              backgroundColor: state.shades.candidateapplicationrowcard,
+              // candidateapplicationrowcard
+            }}
+    >
       <Grid container>
         <Grid item xs={3}>
           <img
-            width="70%"
-            style={{ maxWidth: "110px" }}
+            width="60%"
+            style={{ maxWidth: "90px" , border: "3px solid grey", borderRadius: " 100%" }}
             src={company_logo}
             alt="company logo"
           />

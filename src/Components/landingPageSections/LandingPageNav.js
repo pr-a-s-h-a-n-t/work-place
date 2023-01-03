@@ -73,14 +73,7 @@ function LandingPageNav() {
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar
-          disableGutters
-
-          // sx={{
-          //   color: state.shades.secondary,
-          //   backgroundColor: state.shades.LandingPageNavbackground,
-          // }}
-        >
+        <Toolbar disableGutters>
           <Box
             sx={{
               width: "auto",

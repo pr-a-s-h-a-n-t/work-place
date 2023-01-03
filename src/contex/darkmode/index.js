@@ -25,7 +25,8 @@ const reducer = (state = initialState, action) => {
           tertiary: "#fff",
           LandingPageNavbackground: "#404258",
           LandingPageNaviconButton: "#004242",
-          // LandingPageNavbackcolor: "#F3EFE0",
+          candidateapplication: "#504A4B",
+          candidateapplicationrowcard: "#4B0082",
 
           solutionCardBackground: "#004242",
         },
@@ -34,7 +35,7 @@ const reducer = (state = initialState, action) => {
         //     color: "#fff",
         //     background: "black",
         //     boxShadow: "0px 1px 4px rgba(0, 0, 0, 0.25)",
-        //     hoverBackground:"orange", 
+        //     hoverBackground:"orange",
         //   },
         //   cvUpload:{
         //     color: "#fff",
@@ -69,7 +70,7 @@ const reducer = (state = initialState, action) => {
       newmode = {
         mode: "light",
         shades: {
-          background: "#ffff " ,
+          background: "#ffff ",
           primary: "#ffff",
           secondary: "#000",
           tertiary: "#000",

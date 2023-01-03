@@ -3,6 +3,10 @@ import { query, collection, where, getDocs } from "firebase/firestore";
 import { db } from "../../../../firebaseConfig/index";
 import CommmonTable from "../../../common/commonTable/index";
 
+import { DarkmodeContext } from "../../../../contex/darkmode/index";
+ 
+
+ 
 const columns=[
   {
     title: "Company Name",
@@ -24,6 +28,8 @@ const columns=[
 ]
 
 function CandidateApplication() {
+const [state, dispatch] = React.useContext(DarkmodeContext);
+
   const userInfo = JSON.parse(localStorage.getItem("user"));
   const candidate_id = userInfo.uid;
   const [allApplications, setAllapplications] = useState(null);
@@ -53,7 +59,7 @@ function CandidateApplication() {
   }, []);
 
   return (
-    <div>
+    <div  >
       {allApplications && allApplications.length === 0 ? (
         <h1>No Applications</h1>
       ) : allApplications && allApplications.length > 0 ? (

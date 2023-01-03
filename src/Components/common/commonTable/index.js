@@ -1,14 +1,24 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import "./commonTable.css";
- 
+import { DarkmodeContext } from "../../../contex/darkmode/index";
+
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
 import PendingActionsIcon from "@mui/icons-material/PendingActions";
 function CommmonTable({ data, columns, handleClick = null }) {
+  const [state, dispatch] = React.useContext(DarkmodeContext);
+
   return (
     <div style={{ maxWidth: "90%", margin: "auto" }}>
-      <div className="table-head">
+      <div
+        className="table-head"
+        style={{
+          color: state.shades.secondary,
+          backgroundColor: state.shades.candidateapplication,
+          // candidateapplicationrowcard
+        }}
+      >
         {columns.map((column, index) => {
           return (
             <div
@@ -24,7 +34,15 @@ function CommmonTable({ data, columns, handleClick = null }) {
       </div>
       {data.map((row, q) => {
         return (
-          <div className="table-row" key={q}>
+          <div
+            className="table-row"
+            style={{
+              color: state.shades.secondary,
+              backgroundColor: state.shades.candidateapplicationrowcard,
+              // candidateapplicationrowcard
+            }}
+            key={q}
+          >
             {columns.map((column, j) => {
               if (column.type === "date") {
                 return (

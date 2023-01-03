@@ -3,7 +3,13 @@ import { collection, onSnapshot, query, where } from "@firebase/firestore";
 import { db } from "../../../../../firebaseConfig/index";
 import SideBar from "../../../../common/sidebar/index";
 
+import { DarkmodeContext } from "../../../../../contex/darkmode/index";
+
+ 
+
+
 function Sidebar({ handleClick, currentSelectedMessage }) {
+  const [state, dispatch] = React.useContext(DarkmodeContext);
   const currentUser = JSON.parse(localStorage.getItem("user"));
   const [loading, setLoading] = useState(true);
   const [lastMessages, setLastMessages] = useState(null);
@@ -30,7 +36,10 @@ function Sidebar({ handleClick, currentSelectedMessage }) {
     fetchData();
   }, [docs]);
   return (
-    <div>
+    <div style={{
+      color: state.shades.new,
+        backgroundColor: state.shades.primary,
+    }}>
       <SideBar
         currentSelectedMessage={currentSelectedMessage}
         lastMessages={lastMessages}

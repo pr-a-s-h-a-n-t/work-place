@@ -4,8 +4,16 @@ import React, { useEffect } from 'react';
 import Messagearea from '../../../../common/messageArea/index';
 import {db} from '../../../../../firebaseConfig/index';
 import { v4 as uuid } from 'uuid';
+import { DarkmodeContext } from "../../../../../contex/darkmode/index";
+
+ 
+
+
+
+
 
 function MessageArea({allConversations,setSelectedSectionMobile,currentSelectedMessage}) {
+  const [state, dispatch] = React.useContext(DarkmodeContext);
   let user=JSON.parse(localStorage.getItem("user"))
   let user_id=user.uid
   const submitMessage = (text) => {
@@ -61,7 +69,11 @@ function MessageArea({allConversations,setSelectedSectionMobile,currentSelectedM
     }
   }, [currentSelectedMessage,allConversations]);
   return (
-    <div>
+    <div style={{
+        color: state.shades.secondary,
+        backgroundColor: state.shades.primary,
+     
+    }}>
       <Button
        variant="contained"
         color="primary"

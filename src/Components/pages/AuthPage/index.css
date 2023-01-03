@@ -1,25 +1,35 @@
-.auth-page{
+.auth-page {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
 }
 
-.logo-container{
+.logo-container {
   /* justify-content:flex-end; */
-
+  /* border: 1px solid green; */
+  /* font-size: clamp(20px, 2.7vw, 40px); */
+  min-width: clamp(2.5rem, 15rem, 25rem);
+}
+.logo-container img {
+  width: fit-content;
+  float: right;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 20rem;
 }
 
 .auth-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   align-items: center;
   min-height: 300px;
   margin-left: auto;
 }
 .auth-container > h1 {
-  font-size: clamp(50px, 4.8vw, 60px);
+  font-size: clamp(30px, 4.8vw, 60px);
   font-weight: 600;
   text-transform: uppercase;
   max-width: 80%;
@@ -37,7 +47,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: clamp(13px, 2vw, 3.5vw);
+  margin-bottom: 2rem;
   font-weight: 600;
   background-color: #f5f5f5;
   color: black;
@@ -58,7 +70,7 @@
 .test {
   height: 100px;
   width: 100px;
-  border: 1px solid;
+  /* border: 1px solid; */
   padding: 10px;
   background-size: 100%;
   background-repeat: no-repeat;

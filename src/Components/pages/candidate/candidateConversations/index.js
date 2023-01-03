@@ -27,11 +27,8 @@ function EmployerConversation() {
       let docs = [];
       querySnapshot.forEach((doc) => {
         docs.push(doc.data());
-       
-
       });
       setAllConversations(docs);
-       
     });
   };
 
@@ -52,7 +49,6 @@ function EmployerConversation() {
         color: state.shades.new,
         backgroundColor: state.shades.primary,
       }}
-       
     >
       <Grid
         sx={{
@@ -81,8 +77,8 @@ function EmployerConversation() {
           overflowY: "auto",
           overflowX: "hidden",
           // backgroundColor: "",
-           borderLeft: "10px solid black",
-          boxShadow:"10px 5px 5px green",
+          borderLeft: "10px solid black",
+
           boxSizing: "border-box",
           overflowWrap: "break-word",
         }}

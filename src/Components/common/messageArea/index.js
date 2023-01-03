@@ -4,8 +4,15 @@ import moment from "moment";
 import "./MessageArea.css";
 import SendIcon from "@mui/icons-material/Send";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { DarkmodeContext } from "../../../contex/darkmode/index";
+
+ 
+
+
+
 
 function MessageArea({ allConversations, submitMessage }) {
+  const [state, dispatch] = React.useContext(DarkmodeContext);
   const [text, setText] = useState("");
   const user = JSON.parse(localStorage.getItem("user"));
   const user_id = user.uid;
@@ -37,13 +44,17 @@ function MessageArea({ allConversations, submitMessage }) {
           margin: "auto",
           display: "flex",
           flexDirection: "column",
+          color: state.shades.secondary,
+        backgroundColor: state.shades.primary,
           // justifyContent: "space-between",
+          
         }}
       >
-        <div
+        <div className="message-container"
           style={{
             display: "grid",
             gridGap: "10px",
+            // border: "10px solid black",
             padding: "2.5rem  0.4rem 2.5rem 0",
           }}
         >

@@ -3,7 +3,7 @@
 
   overflow: scroll;
   border-radius: 10px;
-  border: 2px solid violet;
+   
   margin-left: 0.5rem;
   height: 85vh;
   overflow-y: scroll;
@@ -12,7 +12,7 @@
 }
 
 .selected-card {
-  background: #ffffff;
+  background: inherit;
   border-radius: 10px;
   padding: 1px 10px;
   margin: 10px;

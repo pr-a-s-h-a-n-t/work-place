@@ -9,8 +9,11 @@ import { useNavigate } from "react-router-dom";
 //  import setDoc , getDoc, db from firebase
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { db, auth } from "../../../firebaseConfig/index";
+import { DarkmodeContext } from "../../../contex/darkmode/index";
+import { light } from "@mui/material/styles/createPalette";
 
 function AuthPage({ type }) {
+  const [state, dispatch] = React.useContext(DarkmodeContext);
   const navigateuser = useNavigate();
 
   const signIn = () => {
@@ -137,8 +140,17 @@ function AuthPage({ type }) {
       });
   };
 
+  console.log("mode", state.mode);
+
   return (
-    <div className="auth-page">
+    <div
+      className="auth-page"
+      style={{
+        minHeight: "100vh",
+        color: state.shades.secondary,
+        backgroundColor: state.shades.primary,
+      }}
+    >
       <Grid
         xs={12}
         margin="auto"
@@ -146,6 +158,7 @@ function AuthPage({ type }) {
         item
         sx={{
           width: "auto",
+          margin: "auto",
           display: { xs: "flex-col", md: "flex" },
           border: " 10px solid purple",
           borderRadius: "1.5rem",
@@ -160,9 +173,19 @@ function AuthPage({ type }) {
           </button>
         </div>
 
-        <div className="logo-container">
-          <img alt="logo" src={GirlLogo} />
-        </div>
+        {state.mode && state.mode === "light" ? (
+          <div
+            className="logo-container"
+            style={{
+              color: state.shades.secondary,
+              backgroundColor: state.shades.primary,
+            }}
+          >
+            <img alt="logo" src={GirlLogo} />
+          </div>
+        ) : (
+          ""
+        )}
       </Grid>
     </div>
   );

@@ -1,7 +1,7 @@
 import { Button, Grid, TextField } from "@mui/material";
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { db,auth } from "../../../../firebaseConfig/index";
+import { db, auth } from "../../../../firebaseConfig/index";
 import "./CandidateProfile.css";
 import { Notification } from "../../../../utils/Notifications";
 import loadingGif from "../.../../../../../assets/loadingLogo.gif";
@@ -17,14 +17,12 @@ import {
   yearsOfExperience,
 } from "../../../../constants";
 import { DarkmodeContext } from "../../../../contex/darkmode/index";
-
- 
-
+import { InputLabel } from "@mui/material";
+import { color } from "@mui/system";
 function CandidateProfile() {
   const navigate = useNavigate();
   const [state, dispatch] = React.useContext(DarkmodeContext);
 
-   
   const [uploadLoading, setUploadLoading] = useState(0);
   const [loading, setLoading] = useState(false);
   const [disableFields, setDisableFields] = useState(true);
@@ -130,12 +128,16 @@ function CandidateProfile() {
     });
   }, []);
   const makeEditable = () => {
-    setDisableFields(prevState => !prevState);
+    setDisableFields((prevState) => !prevState);
   };
-  
 
   return (
-    <div>
+    <div
+      sx={{
+        color: state.shades.secondary,
+        backgroundColor: state.shades.primary,
+      }}
+    >
       {loading ? (
         <div>
           <img
@@ -145,28 +147,34 @@ function CandidateProfile() {
           />
         </div>
       ) : (
-        <form onSubmit={(e) => submit(e)} className="candidate-onboarding-container">
-          <Grid container spacing={2} sx={{
+        <form
+          style={{
             color: state.shades.secondary,
-        backgroundColor: state.shades.primary,
-          }}>
-            <Grid item xs={12} md={12} lg={12}  
-             
-             >
-              <div className="candidate-btn-container">
-                <Button 
-                 
-                type={disableFields ? "submit" : "button"}
-                onClick={makeEditable}>
+            backgroundColor: state.shades.primary,
+          }}
+          onSubmit={(e) => submit(e)}
+          className="candidate-onboarding-container"
+        >
+          <Grid container spacing={2} sx={{}}>
+            <Grid item xs={12} md={12} lg={12}>
+              <div
+                style={{
+                  color: state.shades.secondary,
+                  backgroundColor: state.shades.primary,
+                }}
+                className="candidate-btn-container"
+              >
+                <Button
+                  type={disableFields ? "submit" : "button"}
+                  onClick={makeEditable}
+                >
                   {" "}
                   {disableFields ? "Edit" : "save"}
                 </Button>
-                <Button
-                onClick={ () => {}}
-                >Logout</Button>
+                <Button onClick={() => {}}>Logout</Button>
               </div>
             </Grid>
-            <Grid item xs={12} md={6}    >
+            <Grid item xs={12} md={6}>
               <label className="candidate-field-label"> Name</label>
               <TextField
                 disabled={disableFields}
@@ -180,9 +188,15 @@ function CandidateProfile() {
             <Grid item xs={12} md={6}>
               <label className="candidate-field-label">Email</label>
               <TextField
+                className="textfield-placeholder"
                 disabled
                 size="small"
                 type="email"
+                // sx={{
+                //   color: "orange",
+
+                //   backgroundColor: "green",
+                // }}
                 required
                 fullWidth
                 value={values.email}
@@ -194,6 +208,7 @@ function CandidateProfile() {
             <Grid item xs={12} md={6}>
               <label className="candidate-field-label">Phone</label>
               <TextField
+                className="textfield-placeholder"
                 size="small"
                 disabled={disableFields}
                 required
@@ -208,7 +223,7 @@ function CandidateProfile() {
             <Grid item xs={12} md={6}>
               <label className=" candidate-text-label">Experience</label>
               <CustomDropDown
-                  disabled={disableFields}
+                disabled={disableFields}
                 required={true}
                 dropDownList={yearsOfExperience}
                 val={values.totalExperience}
@@ -222,7 +237,7 @@ function CandidateProfile() {
               <label className="candidate-text-label">Primary Role</label>
 
               <CustomDropDown
-                  disabled={disableFields}
+                disabled={disableFields}
                 required={true}
                 dropDownList={jobTitle}
                 val={values.primaryRole}
@@ -235,10 +250,10 @@ function CandidateProfile() {
               />
             </Grid>
 
-            <Grid item xs={12} md={6}  >
+            <Grid item xs={12} md={6}>
               <label className="candidate-text-label">skills</label>
               <SearchDropDown
-                  disabled={disableFields}
+                disabled={disableFields}
                 required={true}
                 dropDownList={SkillsDownList}
                 onChange={(data) => handleSkillsInput(data)}
@@ -246,15 +261,13 @@ function CandidateProfile() {
               <div className="candidate-skills-container">
                 {values.skills.map((skill, index) => {
                   return (
-                    <div  key={index} 
-                    className="skills">
+                    <div key={index} className="skills">
                       <div>{skill}</div>
                       <CancelRoundedIcon
-                   
                         color="error"
                         sx={{
                           fontSize: "14px",
-                          pointerEvents:disableFields ? "none" : "auto",
+                          pointerEvents: disableFields ? "none" : "auto",
                         }}
                         onClick={() =>
                           setValues({
@@ -288,7 +301,12 @@ function CandidateProfile() {
                     onChange={(e) => uploadLogo(e)}
                   />
                   <div className="candidate-upload-btn-container">
-                    <Button     disabled={disableFields} onClick={() => inputRef.current.click()}>
+                    <Button
+                      // variant="contained"
+                      color="primary"
+                      disabled={disableFields}
+                      onClick={() => inputRef.current.click()}
+                    >
                       Upoad Resume
                     </Button>
                     {values.logo && (
@@ -298,7 +316,6 @@ function CandidateProfile() {
                 </>
               )}
             </Grid>
-          
           </Grid>
         </form>
       )}
