@@ -19,9 +19,7 @@ import {
 import { DarkmodeContext } from "../../../../contex/darkmode/index";
 import { InputLabel } from "@mui/material";
 import { color } from "@mui/system";
-import {userContext} from '../../../../contex/usercontex/index'
-
-
+import { userContext } from "../../../../contex/usercontex/index";
 
 function CandidateProfile() {
   const navigate = useNavigate();
@@ -57,15 +55,14 @@ function CandidateProfile() {
         ...values,
         type: "candidate",
       });
-      Notification({ message: "profile created successfully",
-      type:'success'
-    });
+      Notification({
+        message: "profile created successfully",
+        type: "success",
+      });
       navigate("/candidate/profile");
     } catch (err) {
-      console.log(err);
-      Notification({ message: "something went wrong",
-      type:'error'
-    });
+      // console.log(err);
+      Notification({ message: "something went wrong", type: "danger" });
     }
   };
 
@@ -87,7 +84,7 @@ function CandidateProfile() {
         setUploadLoading(progress);
       },
       (error) => {
-        Notification({ message: "something went wrong" });
+        Notification({ message: "something went wrong", type: "danger" });
       },
       () => {
         // Upload completed successfully, now we can get the download URL
@@ -96,7 +93,10 @@ function CandidateProfile() {
             ...values,
             resume: downloadURL,
           });
-          Notification({ message: "file uploaded successfully" });
+          Notification({
+            message: "file uploaded successfully",
+            type: "success",
+          });
           setUploadLoading(0);
         });
       }
@@ -130,7 +130,7 @@ function CandidateProfile() {
       } else {
         // doc.data() will be undefined in this case
         // console.log("No such document!");
-        Notification({ message: "No profile found" });
+        Notification({ message: "No profile found", type: "danger" });
       }
       setLoading(false);
     });
@@ -141,9 +141,9 @@ function CandidateProfile() {
 
   const logout = () => {
     auth.signOut();
-    dispatch({type:"LOGOUT"})
+    dispatch({ type: "LOGOUT" });
     navigate("/candidate/auth");
-  }
+  };
 
   return (
     <div
@@ -155,7 +155,7 @@ function CandidateProfile() {
       {loading ? (
         <div>
           <img
-            style={{ width: '100%', height: '100vh' }}
+            style={{ width: "100%", height: "100vh" }}
             src={loadingGif}
             alt="loading"
           />
@@ -192,6 +192,21 @@ function CandidateProfile() {
               <label className="candidate-field-label"> Name</label>
               <TextField
                 disabled={disableFields}
+                InputLabelProps={{
+                  sx: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                inputProps={{
+                  style: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                sx={{
+                  "& .MuiInputBase-input.Mui-disabled": {
+                    WebkitTextFillColor: state.shades.secondary,
+                  },
+                }}
                 required
                 size="small"
                 fullWidth
@@ -202,15 +217,26 @@ function CandidateProfile() {
             <Grid item xs={12} md={6}>
               <label className="candidate-field-label">Email</label>
               <TextField
+                InputLabelProps={{
+                  sx: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                inputProps={{
+                  style: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                sx={{
+                  "& .MuiInputBase-input.Mui-disabled": {
+                    WebkitTextFillColor: state.shades.secondary,
+                    // WenkitBackgroundFillColor: state.shades.solutionCardBackground
+                  },
+                }}
                 className="textfield-placeholder"
                 disabled
                 size="small"
                 type="email"
-                // sx={{
-                //   color: "orange",
-
-                //   backgroundColor: "green",
-                // }}
                 required
                 fullWidth
                 value={values.email}
@@ -222,6 +248,22 @@ function CandidateProfile() {
             <Grid item xs={12} md={6}>
               <label className="candidate-field-label">Phone</label>
               <TextField
+                InputLabelProps={{
+                  sx: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                inputProps={{
+                  style: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                sx={{
+                  "& .MuiInputBase-input.Mui-disabled": {
+                    WebkitTextFillColor: state.shades.secondary,
+                    // WenkitBackgroundFillColor: state.shades.solutionCardBackground
+                  },
+                }}
                 className="textfield-placeholder"
                 size="small"
                 disabled={disableFields}
@@ -237,6 +279,22 @@ function CandidateProfile() {
             <Grid item xs={12} md={6}>
               <label className=" candidate-text-label">Experience</label>
               <CustomDropDown
+                InputLabelProps={{
+                  sx: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                inputProps={{
+                  style: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                sx={{
+                  "& .MuiInputBase-input.Mui-disabled": {
+                    WebkitTextFillColor: state.shades.secondary,
+                    // WenkitBackgroundFillColor: state.shades.solutionCardBackground
+                  },
+                }}
                 disabled={disableFields}
                 required={true}
                 dropDownList={yearsOfExperience}
@@ -251,6 +309,22 @@ function CandidateProfile() {
               <label className="candidate-text-label">Primary Role</label>
 
               <CustomDropDown
+                InputLabelProps={{
+                  sx: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                inputProps={{
+                  style: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                sx={{
+                  "& .MuiInputBase-input.Mui-disabled": {
+                    WebkitTextFillColor: state.shades.secondary,
+                    // WenkitBackgroundFillColor: state.shades.solutionCardBackground
+                  },
+                }}
                 disabled={disableFields}
                 required={true}
                 dropDownList={jobTitle}
@@ -267,6 +341,22 @@ function CandidateProfile() {
             <Grid item xs={12} md={6}>
               <label className="candidate-text-label">skills</label>
               <SearchDropDown
+                InputLabelProps={{
+                  sx: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                inputProps={{
+                  style: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                sx={{
+                  "& .MuiInputBase-input.Mui-disabled": {
+                    WebkitTextFillColor: state.shades.secondary,
+                    // WenkitBackgroundFillColor: state.shades.solutionCardBackground
+                  },
+                }}
                 disabled={disableFields}
                 required={true}
                 dropDownList={SkillsDownList}

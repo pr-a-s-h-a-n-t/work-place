@@ -17,9 +17,7 @@ import { storage } from "../../../../firebaseConfig/index";
 import { async } from "@firebase/util";
 import loadinglogo from "../.../../../../../assets/loadingLogo.gif";
 import { DarkmodeContext } from "../../../../contex/darkmode/index";
-import {userContext} from '../../../../contex/usercontex/index'
-
-
+import { userContext } from "../../../../contex/usercontex/index";
 
 function EmployerProfile() {
   const [state, dispatch] = React.useContext(DarkmodeContext, userContext);
@@ -34,7 +32,7 @@ function EmployerProfile() {
   const [values, setValues] = useState({
     //should be fetched from firestore if the user has already created a profile
     companyName: "",
-    companyWebsite: "",
+    companyWebsites: "",
     companyEmail: "",
     companyPhone: "",
     industryType: "",
@@ -142,21 +140,22 @@ function EmployerProfile() {
             ...values,
           },
           { merge: true },
-          Notification({ message: "profile created successfully",
-      type:'success'})
+          Notification({
+            message: "profile created successfully",
+            type: "success",
+          })
         );
-        
       } catch (err) {
         Notification({ message: "something went wrong" });
       }
     }
   };
-  
+
   const logout = () => {
     auth.signOut();
-    dispatch({type:"LOGOUT"})
+    dispatch({ type: "LOGOUT" });
     navigateEmployer("/employer/auth");
-  }
+  };
   return (
     <div
       sx={{
@@ -173,12 +172,14 @@ function EmployerProfile() {
           />
         </div>
       ) : (
-        <form 
-        style={{
+        <form
+          style={{
             color: state.shades.secondary,
             backgroundColor: state.shades.primary,
           }}
-        onSubmit={(e) => submit(e)} className="onboarding-container">
+          onSubmit={(e) => submit(e)}
+          className="onboarding-container"
+        >
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <Grid container spacing={2}>
@@ -220,6 +221,21 @@ function EmployerProfile() {
                 </Grid>
                 <Grid item xs={12} md={8}>
                   <TextField
+                    InputLabelProps={{
+                      sx: {
+                        color: state.shades.secondary,
+                      },
+                    }}
+                    inputProps={{
+                      style: {
+                        color: state.shades.secondary,
+                      },
+                    }}
+                    sx={{
+                      "& .MuiInputBase-input.Mui-disabled": {
+                        WebkitTextFillColor: state.shades.secondary,
+                      },
+                    }}
                     disabled={disableField}
                     required
                     size="small"
@@ -231,6 +247,21 @@ function EmployerProfile() {
                   />
 
                   <TextField
+                    InputLabelProps={{
+                      sx: {
+                        color: state.shades.secondary,
+                      },
+                    }}
+                    inputProps={{
+                      style: {
+                        color: state.shades.secondary,
+                      },
+                    }}
+                    sx={{
+                      "& .MuiInputBase-input.Mui-disabled": {
+                        WebkitTextFillColor: state.shades.secondary,
+                      },
+                    }}
                     disabled={disableField}
                     size="small"
                     fullWidth
@@ -240,13 +271,14 @@ function EmployerProfile() {
                     }
                   />
                 </Grid>
-                <Grid item xs={12} md={2} >
-                  <div 
-                  style={{
-                  color: state.shades.secondary,
-                  backgroundColor: state.shades.primary,
-                }}
-                  className="btn-container">
+                <Grid item xs={12} md={2}>
+                  <div
+                    style={{
+                      color: state.shades.secondary,
+                      backgroundColor: state.shades.primary,
+                    }}
+                    className="btn-container"
+                  >
                     <Button onClick={makeEditable}>
                       {" "}
                       {disableField ? "Edit" : "save"}
@@ -261,6 +293,21 @@ function EmployerProfile() {
             <Grid item xs={12} sm={6}>
               <label className="field-label">Company Email</label>
               <TextField
+                InputLabelProps={{
+                  sx: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                inputProps={{
+                  style: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                sx={{
+                  "& .MuiInputBase-input.Mui-disabled": {
+                    WebkitTextFillColor: state.shades.secondary,
+                  },
+                }}
                 disabled={true}
                 size="small"
                 type="email"
@@ -275,6 +322,21 @@ function EmployerProfile() {
             <Grid item xs={12} sm={6}>
               <label className="field-label">Company Phone</label>
               <TextField
+                InputLabelProps={{
+                  sx: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                inputProps={{
+                  style: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                sx={{
+                  "& .MuiInputBase-input.Mui-disabled": {
+                    WebkitTextFillColor: state.shades.secondary,
+                  },
+                }}
                 disabled={disableField}
                 size="small"
                 required
@@ -289,12 +351,27 @@ function EmployerProfile() {
             <Grid item xs={12} sm={6}>
               <label className="field-label">Company Website</label>
               <TextField
+                InputLabelProps={{
+                  sx: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                inputProps={{
+                  style: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                sx={{
+                  "& .MuiInputBase-input.Mui-disabled": {
+                    WebkitTextFillColor: state.shades.secondary,
+                  },
+                }}
                 disabled={disableField}
                 size="small"
                 fullWidth
-                value={values.companyWebsite}
+                value={values.companyWebsites}
                 onChange={(e) =>
-                  setValues({ ...values, companyWebsite: e.target.value })
+                  setValues({ ...values, companyWebsites: e.target.value })
                 }
               />
             </Grid>
@@ -302,6 +379,21 @@ function EmployerProfile() {
             <Grid item xs={12} sm={6}>
               <label className="field-label">Company Location</label>
               <TextField
+                InputLabelProps={{
+                  sx: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                inputProps={{
+                  style: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                sx={{
+                  "& .MuiInputBase-input.Mui-disabled": {
+                    WebkitTextFillColor: state.shades.secondary,
+                  },
+                }}
                 disabled={disableField}
                 size="small"
                 fullWidth
@@ -315,6 +407,21 @@ function EmployerProfile() {
             <Grid item xs={12} sm={6}>
               <label className="field-label">Industry Type</label>
               <TextField
+                InputLabelProps={{
+                  sx: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                inputProps={{
+                  style: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                sx={{
+                  "& .MuiInputBase-input.Mui-disabled": {
+                    WebkitTextFillColor: state.shades.secondary,
+                  },
+                }}
                 disabled={disableField}
                 size="small"
                 fullWidth
@@ -328,6 +435,21 @@ function EmployerProfile() {
             <Grid item xs={12} sm={6}>
               <label className="field-label">No. of employees</label>
               <TextField
+                InputLabelProps={{
+                  sx: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                inputProps={{
+                  style: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                sx={{
+                  "& .MuiInputBase-input.Mui-disabled": {
+                    WebkitTextFillColor: state.shades.secondary,
+                  },
+                }}
                 disabled={disableField}
                 size="small"
                 fullWidth
@@ -340,6 +462,21 @@ function EmployerProfile() {
             <Grid item xs={12} sm={12}>
               <label className="field-label">Company description</label>
               <TextField
+                InputLabelProps={{
+                  sx: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                inputProps={{
+                  style: {
+                    color: state.shades.secondary,
+                  },
+                }}
+                sx={{
+                  "& .MuiInputBase-input.Mui-disabled": {
+                    WebkitTextFillColor: state.shades.secondary,
+                  },
+                }}
                 disabled={disableField}
                 multiline
                 minRows={5}

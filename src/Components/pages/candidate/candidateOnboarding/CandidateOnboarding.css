@@ -33,13 +33,19 @@
   color: white;
   padding: 10px 20px;
   font-size: clamp(15px, 1.3vw, 25px);
-  text-transform: none;
+  text-transform: capitalize;
+}
+
+.candidate-onboarding-btn-container button:hover{
+  background: greenyellow;
+color: inherit;
 }
 .upload-btn-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  border: 2px dotted black;
 }
 
 @media screen and (max-width: 768px) {

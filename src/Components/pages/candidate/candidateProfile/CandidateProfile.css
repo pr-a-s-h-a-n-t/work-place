@@ -1,98 +1,91 @@
-.candidate-field-label{
-    font-weight: 800;
-      display: flex;
-      margin: 10px;
-  }
-   
-  .text-field{
-    color: inherit !important;
-    background-color: #7F31D2;
-  }
-  .candidate-onboarding-container{
-    max-width: 80%;
-      background: inherit;
-      box-shadow: 0px 8px 24px rgb(0 0 0 / 15%);
-      border-radius: 8px;
-      margin: 20px auto;
-      padding: 20px;
-  }
-  .candidate-btn-container{
-    display: flex;
-    width: 100%; 
-     background-color: inherit;
-      justify-content: center;
-      margin:auto ;
-      
-  }
-  .candidate-btn-container button{
-    
-    background: greenyellow;
-    border-radius: 8px;
-    width: 8rem;
-    color: white;
-    padding: 10px 20px;
-    margin: 0.3rem;
-    font-size: clamp(13px,1.4vw, 22px);
-    text-transform: none;
-  }
-  .candidate-btn-container button:hover{
-    color: red;
-    background: #4943da;
+.candidate-field-label {
+  font-weight: 800;
+  display: flex;
+  margin: 10px;
+}
 
-  }
-  .candidate-upload-btn-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    border: 2px dotted black;
-    padding: 10px 20px;
-     
-  }
-  .candidate-upload-btn-container:hover{
-    color: red;
-    /* background: #4943da; */
-    cursor: pointer;
-  }
+.text-field {
+  color: inherit !important;
+  background-color: #7f31d2;
+}
+.candidate-onboarding-container {
+  max-width: 80%;
+  background: inherit;
+  box-shadow: 0px 8px 24px rgb(0 0 0 / 15%);
+  border-radius: 8px;
+  margin: 20px auto;
+  padding: 20px;
+}
+.candidate-btn-container {
+  display: flex;
+  width: 100%;
+  background-color: inherit;
+  justify-content: center;
+  margin: auto;
+}
+.candidate-btn-container button {
+  background: greenyellow;
+  border-radius: 8px;
+  width: 8rem;
+  color: white;
+  padding: 10px 20px;
+  margin: 0.3rem;
+  font-size: clamp(13px, 1.4vw, 22px);
+  text-transform: none;
+}
+.candidate-btn-container button:hover {
+  color: red;
+  background: #4943da;
+}
+.candidate-upload-btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px dotted black;
+  padding: 10px 20px;
+}
+.candidate-upload-btn-container:hover {
+  color: red;
+  /* background: #4943da; */
+  cursor: pointer;
+}
 
-  .candidate-skills-container{
-    margin-top: 0.5rem;
-    display: flex;
-    border-radius: 0.5rem;
-    flex-direction: row;
-    /* border: 2px solid orange; */
-    padding: 0.5rem;
-    flex-wrap: wrap;
-  }
+.candidate-skills-container {
+  margin-top: 0.5rem;
+  display: flex;
+  border-radius: 0.5rem;
+  flex-direction: row;
+  /* border: 2px solid orange; */
+  padding: 0.5rem;
+  flex-wrap: wrap;
+  color: inherit;
+}
 
-  .skills{
-    border: 2px double  green;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    margin: 0.2rem;
-    display: flex;
-    cursor: pointer;
-    
-  }
-  .skills:hover{
-    background-color: rebeccapurple;
-    color: blanchedalmond;
+.skills {
+  border: 2px double green;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin: 0.2rem;
+  display: flex;
+  cursor: pointer;
+}
+.skills:hover {
+  background-color: rebeccapurple;
+  color: blanchedalmond;
+}
 
+@media screen and (max-width: 768px) {
+  .candidate-btn-container {
+    position: sticky;
+
+    bottom: 0px;
+    background: #fff;
+    z-index: 2;
+    padding: 10px 0px;
+    margin: unset;
   }
-  
-  @media screen and (max-width: 768px){
-  
-    .candidate-btn-container{
-      position: sticky;
-       
-      bottom: 0px;
-      background: #fff;
-      z-index: 2;
-      padding: 10px 0px;
-      margin: unset;
-    }
-    .candidate-btn-container  button{
-      width: 25%;
-       
-    }
+  .candidate-btn-container button {
+    width: 25%;
   }
+}

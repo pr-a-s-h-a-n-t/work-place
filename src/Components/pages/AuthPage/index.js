@@ -56,7 +56,7 @@ function AuthPage({ type }) {
             //show him error message
             Notification({
               message:'you are trying to signIn as candidate but you are already exist as employer',
-              type:'error'
+              type:'danger'
             })
           }
         }
@@ -83,7 +83,7 @@ function AuthPage({ type }) {
             //show him error message
             Notification({
               message:'you are trying to signIn as employer but you are already exist as candidate',
-              type:'error'
+              type:'danger'
             })
           }
         }

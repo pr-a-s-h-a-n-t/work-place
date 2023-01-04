@@ -125,6 +125,16 @@ function EmployerOnboarding() {
           <Grid item xs={12} sm={6}>
             <label className="field-label">Company Name</label>
             <TextField
+              sx={{
+                input: {
+                  color: state.shades.secondary,
+                },
+              }}
+              InputLabelProps={{
+                sx: {
+                  color: state.shades.secondary,
+                },
+              }}
               required
               size="small"
               fullWidth
@@ -140,6 +150,21 @@ function EmployerOnboarding() {
           <Grid item xs={12} sm={6}>
             <label className="field-label">Company Email</label>
             <TextField
+              InputLabelProps={{
+                sx: {
+                  color: state.shades.secondary,
+                },
+              }}
+              inputProps={{
+                style: {
+                  color: state.shades.secondary,
+                },
+              }}
+              sx={{
+                "& .MuiInputBase-input.Mui-disabled": {
+                  WebkitTextFillColor: state.shades.secondary,
+                },
+              }}
               size="small"
               type="email"
               required
@@ -157,6 +182,21 @@ function EmployerOnboarding() {
           <Grid item xs={12} sm={6}>
             <label className="field-label">Company Phone</label>
             <TextField
+              InputLabelProps={{
+                sx: {
+                  color: state.shades.secondary,
+                },
+              }}
+              inputProps={{
+                style: {
+                  color: state.shades.secondary,
+                },
+              }}
+              sx={{
+                "& .MuiInputBase-input.Mui-disabled": {
+                  WebkitTextFillColor: state.shades.secondary,
+                },
+              }}
               size="small"
               required
               fullWidth
@@ -173,13 +213,28 @@ function EmployerOnboarding() {
           <Grid item xs={12} sm={6}>
             <label className="field-label">Company Website</label>
             <TextField
+              InputLabelProps={{
+                sx: {
+                  color: state.shades.secondary,
+                },
+              }}
+              inputProps={{
+                style: {
+                  color: state.shades.secondary,
+                },
+              }}
+              sx={{
+                "& .MuiInputBase-input.Mui-disabled": {
+                  WebkitTextFillColor: state.shades.secondary,
+                },
+              }}
               size="small"
               fullWidth
-              value={employerData.companyWebsite}
+              value={employerData.companyWebsites}
               onChange={(e) =>
                 setEmployerData({
                   ...employerData,
-                  companyWebsite: e.target.value,
+                  companyWebsites: e.target.value,
                 })
               }
             />
@@ -188,6 +243,21 @@ function EmployerOnboarding() {
           <Grid item xs={12} sm={6}>
             <label className="field-label">Company Location</label>
             <TextField
+              InputLabelProps={{
+                sx: {
+                  color: state.shades.secondary,
+                },
+              }}
+              inputProps={{
+                style: {
+                  color: state.shades.secondary,
+                },
+              }}
+              sx={{
+                "& .MuiInputBase-input.Mui-disabled": {
+                  WebkitTextFillColor: state.shades.secondary,
+                },
+              }}
               size="small"
               fullWidth
               value={employerData.companyLocation}
@@ -203,6 +273,21 @@ function EmployerOnboarding() {
           <Grid item xs={12} sm={6}>
             <label className="field-label">Company tagline</label>
             <TextField
+              InputLabelProps={{
+                sx: {
+                  color: state.shades.secondary,
+                },
+              }}
+              inputProps={{
+                style: {
+                  color: state.shades.secondary,
+                },
+              }}
+              sx={{
+                "& .MuiInputBase-input.Mui-disabled": {
+                  WebkitTextFillColor: state.shades.secondary,
+                },
+              }}
               size="small"
               fullWidth
               value={employerData.companyTagline}
@@ -218,6 +303,21 @@ function EmployerOnboarding() {
           <Grid item xs={12} sm={6}>
             <label className="field-label">Industry Type</label>
             <TextField
+              InputLabelProps={{
+                sx: {
+                  color: state.shades.secondary,
+                },
+              }}
+              inputProps={{
+                style: {
+                  color: state.shades.secondary,
+                },
+              }}
+              sx={{
+                "& .MuiInputBase-input.Mui-disabled": {
+                  WebkitTextFillColor: state.shades.secondary,
+                },
+              }}
               size="small"
               fullWidth
               value={employerData.industryType}
@@ -233,6 +333,21 @@ function EmployerOnboarding() {
           <Grid item xs={12} sm={6}>
             <label className="field-label">No. of employees</label>
             <TextField
+              InputLabelProps={{
+                sx: {
+                  color: state.shades.secondary,
+                },
+              }}
+              inputProps={{
+                style: {
+                  color: state.shades.secondary,
+                },
+              }}
+              sx={{
+                "& .MuiInputBase-input.Mui-disabled": {
+                  WebkitTextFillColor: state.shades.secondary,
+                },
+              }}
               size="small"
               fullWidth
               value={employerData.noOfEmployees}
@@ -247,6 +362,21 @@ function EmployerOnboarding() {
           <Grid item xs={12} sm={12}>
             <label className="field-label">Company description</label>
             <TextField
+              InputLabelProps={{
+                sx: {
+                  color: state.shades.secondary,
+                },
+              }}
+              inputProps={{
+                style: {
+                  color: state.shades.secondary,
+                },
+              }}
+              sx={{
+                "& .MuiInputBase-input.Mui-disabled": {
+                  WebkitTextFillColor: state.shades.secondary,
+                },
+              }}
               multiline
               minRows={5}
               fullWidth
@@ -294,7 +424,7 @@ function EmployerOnboarding() {
             className="employer-onboarding-btn-container"
           >
             <Button color="secondary" variant="contained" type="submit">
-              Complete Setup
+              Complete Onboarding
             </Button>
           </div>
         </Grid>

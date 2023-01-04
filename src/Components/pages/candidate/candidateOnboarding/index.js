@@ -115,6 +115,7 @@ function CandidateOnboarding() {
         color: state.shades.secondary,
         backgroundColor: state.shades.primary,
         boxSizing: "border-box",
+        minHeight: "100vh",
       }}
     >
       <form
@@ -138,6 +139,21 @@ function CandidateOnboarding() {
           <Grid item xs={12} sm={12} lg={6}>
             <label className="field-label"> Name</label>
             <TextField
+              InputLabelProps={{
+                sx: {
+                  color: state.shades.secondary,
+                },
+              }}
+              inputProps={{
+                style: {
+                  color: state.shades.secondary,
+                },
+              }}
+              sx={{
+                "& .MuiInputBase-input.Mui-disabled": {
+                  WebkitTextFillColor: state.shades.secondary,
+                },
+              }}
               required
               size="small"
               fullWidth
@@ -148,6 +164,21 @@ function CandidateOnboarding() {
           <Grid item xs={12} sm={12} lg={6}>
             <label className="field-label">Email</label>
             <TextField
+              InputLabelProps={{
+                sx: {
+                  color: state.shades.secondary,
+                },
+              }}
+              inputProps={{
+                style: {
+                  color: state.shades.secondary,
+                },
+              }}
+              sx={{
+                "& .MuiInputBase-input.Mui-disabled": {
+                  WebkitTextFillColor: state.shades.secondary,
+                },
+              }}
               disabled
               size="small"
               type="email"
@@ -160,6 +191,21 @@ function CandidateOnboarding() {
           <Grid item xs={12} sm={12} lg={6}>
             <label className="field-label">Phone</label>
             <TextField
+              InputLabelProps={{
+                sx: {
+                  color: state.shades.secondary,
+                },
+              }}
+              inputProps={{
+                style: {
+                  color: state.shades.secondary,
+                },
+              }}
+              sx={{
+                "& .MuiInputBase-input.Mui-disabled": {
+                  WebkitTextFillColor: state.shades.secondary,
+                },
+              }}
               size="small"
               required
               fullWidth
@@ -172,6 +218,22 @@ function CandidateOnboarding() {
             <label className="text-label">Primary Role</label>
 
             <CustomDropDown
+              InputLabelProps={{
+                sx: {
+                  color: state.shades.secondary,
+                },
+              }}
+              inputProps={{
+                style: {
+                  color: state.shades.secondary,
+                },
+              }}
+              sx={{
+                "& .MuiInputBase-input.Mui-disabled": {
+                  WebkitTextFillColor: state.shades.secondary,
+                  // WenkitBackgroundFillColor: state.shades.solutionCardBackground
+                },
+              }}
               fullWidth
               size="small"
               required={true}
@@ -189,6 +251,22 @@ function CandidateOnboarding() {
           <Grid item xs={12} md={12} lg={6}>
             <label className="text-label">Experience</label>
             <CustomDropDown
+             InputLabelProps={{
+                sx: {
+                  color: state.shades.secondary,
+                },
+              }}
+              inputProps={{
+                style: {
+                  color: state.shades.secondary,
+                },
+              }}
+              sx={{
+                "& .MuiInputBase-input.Mui-disabled": {
+                  WebkitTextFillColor: state.shades.secondary,
+                  // WenkitBackgroundFillColor: state.shades.solutionCardBackground
+                },
+              }}
               fullWidth
               size="small"
               required={true}
@@ -203,6 +281,22 @@ function CandidateOnboarding() {
           <Grid item xs={12} md={12} lg={6}>
             <label className="text-label">skills</label>
             <SearchDropDown
+           InputLabelProps={{
+                sx: {
+                  color: state.shades.secondary,
+                },
+              }}
+              inputProps={{
+                style: {
+                  color: state.shades.secondary,
+                },
+              }}
+              sx={{
+                "& .MuiInputBase-input.Mui-disabled": {
+                  WebkitTextFillColor: state.shades.secondary,
+                  // WenkitBackgroundFillColor: state.shades.solutionCardBackground
+                },
+              }}
               fullWidth
               size="small"
               required={true}
@@ -247,7 +341,7 @@ function CandidateOnboarding() {
                   }}
                   ref={inputRef}
                   type={"file"}
-                  value={""}
+                  // value={" "}
                   onChange={(e) => uploadLogo(e)}
                 />
                 <div className="upload-btn-container">

@@ -5,6 +5,9 @@ import React, { useEffect, useState } from "react";
 import MessageArea from "./messageArea/index";
 import SideBar from "./sidebar/index";
 import { DarkmodeContext } from "../../../../contex/darkmode/index";
+import { Notification } from "../../../../utils/Notifications";
+
+
 
 function EmployerConversation() {
   const [state, dispatch] = React.useContext(DarkmodeContext);
@@ -12,7 +15,7 @@ function EmployerConversation() {
   const [selectedSectionMobile, setSelectedSectionMobile] = useState("sidebar");
   const [currentSelectedMessage, setCurrentSelectedMessage] = useState(null);
   const handleClick = async (message) => {
-    console.log(message);
+    // console.log(message);
     setCurrentSelectedMessage(message);
     // fetch all the docs from the conversation collection,
     //  where the conversation id is equal to the
@@ -35,6 +38,10 @@ function EmployerConversation() {
   useEffect(() => {
     if (allConversations) {
       setSelectedSectionMobile("messageArea");
+      Notification({
+        message:`Messages: ${allConversations.length} `,
+        type:'warning',
+      })
     }
   }, [allConversations]);
 
