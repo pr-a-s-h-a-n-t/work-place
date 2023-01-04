@@ -64,6 +64,7 @@ const [state, dispatch] = React.useContext(DarkmodeContext);
   const userInfo = JSON.parse(localStorage.getItem("user"));
   const [allApplications, setAllApplications] = useState(null);
   let employerId = userInfo.uid;
+  // console.log(allApplications, "this is all applications");
 
   const fetch = () => {
     // fetch all the docs in applications collection where employerId === current user id
@@ -77,7 +78,7 @@ const [state, dispatch] = React.useContext(DarkmodeContext);
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let docs = [];
       querySnapshot.forEach((doc) => {
-        console.log(doc.data());
+        // console.log("this is doc data",doc.data());
         docs.push(doc.data());
       });
       setAllApplications(docs);
@@ -137,7 +138,7 @@ const [state, dispatch] = React.useContext(DarkmodeContext);
       });
     } else if (action === "reject") {
       //delete the application from the collection
-      console.log(data);
+      // console.log(data);
       deleteDoc(doc(db, "applications", data.application_id));
       Notification({
         type: "danger",

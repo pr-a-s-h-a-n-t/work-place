@@ -8,7 +8,7 @@ import {
   doc,
   getDoc,
 } from "firebase/firestore";
- 
+
 import { db } from "../../../../firebaseConfig/index";
 import CandidateJobCard from "./CandidateJobCard";
 import { v4 as uuid } from "uuid";
@@ -64,38 +64,37 @@ function CandidateJobs() {
       });
       return;
     } else {
-try{
-      // fetch the candidate info from the candidate collection
-      const candidate = await getDoc(doc(db,'userInfo',candidate_id))
-      // console.log(candidate.data(),'ssss')
-      let candidate_resume=candidate.data().resume
-      let candidate_exp=candidate.data().totalExperience;
-      let candidate_name=candidate.data().name;
+      try {
+        // fetch the candidate info from the candidate collection
+        const candidate = await getDoc(doc(db, "userInfo", candidate_id));
+        // console.log(candidate.data(),'ssss')
+        let candidate_resume = candidate.data().resume;
+        // console.log(candidate_resume, "this is 2nd test");
+        let candidate_exp = candidate.data().totalExperience;
+        let candidate_name = candidate.data().name;
 
-      await setDoc(doc(db, "applications", application_id), {
-        job_id: job.job_id,
-        candidate_id: candidate_id,
-        application_id: application_id,
-        status: "applied",
-        createdAt: new Date(),
-        employer_id: job.employer_id,
-        jobTitle: job.jobTitle,
-        company_name: job.company_name,
-        candidate_resume,
-        candidate_exp,
-        candidate_name
-      });
-    }
-    catch(err){
-      console.log(err)
-    }
+        await setDoc(doc(db, "applications", application_id), {
+          job_id: job.job_id,
+          candidate_id: candidate_id,
+          application_id: application_id,
+          status: "applied",
+          createdAt: new Date(),
+          employer_id: job.employer_id,
+          jobTitle: job.jobTitle,
+          company_name: job.company_name,
+          candidate_resume,
+          candidate_exp,
+          candidate_name,
+        });
+      } catch (err) {
+        console.log(err);
+      }
     }
 
     Notification({
       message: "Applied Successfully",
       type: "success",
     });
-    
   };
   return (
     <div>
@@ -104,7 +103,9 @@ try{
       ) : allJobs && allJobs.length > 0 ? (
         <div>
           {allJobs.map((job, i) => {
-            return <CandidateJobCard key={i} applyonJob={applyonJob} job={job} />;
+            return (
+              <CandidateJobCard key={i} applyonJob={applyonJob} job={job} />
+            );
           })}
         </div>
       ) : (

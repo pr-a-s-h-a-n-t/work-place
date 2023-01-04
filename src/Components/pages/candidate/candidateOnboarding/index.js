@@ -55,11 +55,11 @@ function CandidateOnboarding() {
         ...values,
         type: "candidate",
       });
-      Notification({ message: "profile created successfully" });
+      Notification({ message: "profile created successfully", type: "success"});
       navigate("/candidate/profile");
     } catch (err) {
       console.log(err);
-      Notification({ message: "something went wrong" });
+      Notification({ message: "something went wrong" ,type: "danger"});
     }
   };
 
@@ -81,7 +81,7 @@ function CandidateOnboarding() {
         setUploadLoading(progress);
       },
       (error) => {
-        Notification({ message: "something went wrong" });
+        Notification({ message: "something went wrong", type: "danger" });
       },
       () => {
         // Upload completed successfully, now we can get the download URL
@@ -90,8 +90,9 @@ function CandidateOnboarding() {
             ...values,
             resume: downloadURL,
           });
-          Notification({ message: "file uploaded successfully" });
+          Notification({ message: "file uploaded successfully", type: "success" });
           setUploadLoading(0);
+          // console.log("this is resume url",values.resume);
         });
       }
     );

@@ -38,7 +38,7 @@ function CandidateProfile() {
     primaryRole: "", //d
     resume: "",
   });
-
+ 
   const submit = async (e) => {
     e.preventDefault();
     // console.log(values);
@@ -127,6 +127,8 @@ function CandidateProfile() {
       if (doc.exists()) {
         // console.log("Document data:", doc.data());
         setValues({ ...doc.data() });
+        // Notification({ message: `Hello ${(doc.data().name) }`, type: "info" });
+ 
       } else {
         // doc.data() will be undefined in this case
         // console.log("No such document!");
@@ -134,6 +136,7 @@ function CandidateProfile() {
       }
       setLoading(false);
     });
+     
   }, []);
   const makeEditable = () => {
     setDisableFields((prevState) => !prevState);

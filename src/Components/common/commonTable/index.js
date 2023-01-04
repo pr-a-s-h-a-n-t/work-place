@@ -120,7 +120,7 @@ function CommmonTable({ data, columns, handleClick = null }) {
                     key={j}
                     className="resume-btn"
                     href={row[column.dataIndex]}
-                    target="__blank"
+                    target="blank"
                   >
                     View resume
                   </a>
