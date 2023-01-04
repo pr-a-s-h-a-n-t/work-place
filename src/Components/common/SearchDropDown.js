@@ -8,22 +8,22 @@ function SearchDropDown({ dropDownList, val, onChange, disabled, required }) {
 
   return (
     <Autocomplete
-      InputLabelProps={{
-        sx: {
-          color: state.shades.secondary,
-        },
-      }}
-      inputProps={{
-        style: {
-          color: state.shades.secondary,
-        },
-      }}
-      sx={{
-        "& .MuiInputBase-input.Mui-disabled": {
-          WebkitTextFillColor: state.shades.secondary,
-          // WenkitBackgroundFillColor: state.shades.solutionCardBackground
-        },
-      }}
+      // InputLabelProps={{
+      //   sx: {
+      //     color: state.shades.secondary,
+      //   },
+      // }}
+      // inputProps={{
+      //   style: {
+      //     color: state.shades.secondary,
+      //   },
+      // }}
+      // sx={{
+      //   "& .MuiInputBase-input.Mui-disabled": {
+      //     WebkitTextFillColor: state.shades.secondary,
+      //     // WenkitBackgroundFillColor: state.shades.solutionCardBackground
+      //   },
+      // }}
       fullWidth
       size="small"
       disabled={disabled}

@@ -38,10 +38,11 @@ function EmployerConversation() {
   useEffect(() => {
     if (allConversations) {
       setSelectedSectionMobile("messageArea");
-      Notification({
-        message:`Messages: ${allConversations.length} `,
-        type:'warning',
-      })
+      // console.log(allConversations , "allConversations");
+      // Notification({
+      //   message:`Messages: ${allConversations.length} `,
+      //   type:'warning',
+      // })
     }
   }, [allConversations]);
 

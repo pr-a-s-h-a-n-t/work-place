@@ -46,12 +46,13 @@ const [state, dispatch] = React.useContext(DarkmodeContext);
       const querySnapshot = await getDocs(q);
       let applications = [];
       querySnapshot.forEach((doc) => {
-        console.log(doc.id, " => ", doc.data());
+        // console.log(doc.id, " => ", doc.data());
         applications.push(doc.data());
       });
       setAllapplications(applications);
     } catch (e) {
       console.log(e);
+       
     }
   };
   useEffect(() => {

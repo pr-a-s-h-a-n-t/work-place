@@ -5,6 +5,7 @@ import SideBar from "../../../../common/sidebar/index";
 
 import { DarkmodeContext } from "../../../../../contex/darkmode/index";
 
+import { Notification } from "../../../../../utils/Notifications";
  
 
 
@@ -26,6 +27,7 @@ function Sidebar({ handleClick, currentSelectedMessage }) {
         docs.push(doc.data());
       });
       setLastMessages(docs);
+      
     });
   };
   useEffect(() => {

@@ -52,14 +52,14 @@ function EmployerProfile() {
     let uid = user.uid;
     let docRef = doc(db, "userInfo", uid);
     getDoc(docRef).then((doc) => {
-      console.log(doc);
+      // console.log(doc);
       if (doc.exists()) {
-        console.log("Document data:", doc.data());
+        // console.log("Document data:", doc.data());
         setValues({ ...doc.data() });
       } else {
         // doc.data() will be undefined in this case
         console.log("No such document!");
-        Notification({ message: "No profile found" });
+        Notification({ message: "No profile found", type: "danger" });
       }
       setLoading(false);
     });
@@ -67,7 +67,7 @@ function EmployerProfile() {
 
   const submit = async (e) => {
     e.preventDefault();
-    console.log(values);
+    // console.log(values);s
 
     //call firebase function to create employer profile
     //store in firestore collection (userInfo)
@@ -90,7 +90,7 @@ function EmployerProfile() {
 
   const uploadLogo = (e) => {
     let file = e.target.files[0];
-    console.log(file);
+    // console.log(file);s
     //ref(storage,'path to file',file,name)
     const storageRef = ref(storage, "company-logo/" + file.name);
     //uploadBytesResumable(storage-Ref,file)

@@ -38,7 +38,7 @@ function SideBar({ setMobileSectionState, selectedJob, setSelectedJob }) {
       });
       setJobs(jobs);
       setJobSearch(jobs);
-      console.log(jobs);
+      // console.log(jobs);
     });
   }, []);
 

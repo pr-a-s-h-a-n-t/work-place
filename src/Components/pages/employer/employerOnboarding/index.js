@@ -37,7 +37,7 @@ function EmployerOnboarding() {
 
   const submit = async (e) => {
     e.preventDefault();
-    console.log(employerData);
+    // console.log(employerData);
     const user = JSON.parse(localStorage.getItem("user"));
     const uid = user.uid;
     //call firebase function to create employer profile
@@ -61,7 +61,7 @@ function EmployerOnboarding() {
 
   const uploadLogo = (e) => {
     let file = e.target.files[0];
-    console.log(file);
+    // console.log(file);
     //ref(storage,'path to file',file,name)
     const storageRef = ref(storage, "company-logo/" + file.name);
     //uploadBytesResumable(storage-Ref,file)

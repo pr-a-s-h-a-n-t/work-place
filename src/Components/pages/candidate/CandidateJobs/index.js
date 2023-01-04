@@ -32,7 +32,7 @@ function CandidateJobs() {
   }, []);
 
   const applyonJob = async (job) => {
-    console.log(job, "apply");
+    // console.log(job, "apply");
     let userInfo = JSON.parse(localStorage.getItem("user"));
     let candidate_id = userInfo.uid;
     // 1.add this job in my applications section from which i can see all the jobs that i have applied for
@@ -56,18 +56,18 @@ function CandidateJobs() {
       return doc.data().job_id === job.job_id;
     });
     //find returns the first element that satisfies the condition
-    console.log(alreadyApplied, "alreadyApplied");
+    // console.log(alreadyApplied, "alreadyApplied");
     if (alreadyApplied) {
       Notification({
         message: "You have already applied for this job",
-        type: "error",
+        type: "info",
       });
       return;
     } else {
 try{
       // fetch the candidate info from the candidate collection
       const candidate = await getDoc(doc(db,'userInfo',candidate_id))
-      console.log(candidate.data(),'ssss')
+      // console.log(candidate.data(),'ssss')
       let candidate_resume=candidate.data().resume
       let candidate_exp=candidate.data().totalExperience;
       let candidate_name=candidate.data().name;

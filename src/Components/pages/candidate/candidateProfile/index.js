@@ -41,7 +41,7 @@ function CandidateProfile() {
 
   const submit = async (e) => {
     e.preventDefault();
-    console.log(values);
+    // console.log(values);
     const user = JSON.parse(localStorage.getItem("user"));
     const uid = user.uid;
     //call firebase function to create employer profile
@@ -123,9 +123,9 @@ function CandidateProfile() {
     let uid = user.uid;
     let docRef = doc(db, "userInfo", uid);
     getDoc(docRef).then((doc) => {
-      console.log(doc);
+      // console.log(doc);
       if (doc.exists()) {
-        console.log("Document data:", doc.data());
+        // console.log("Document data:", doc.data());
         setValues({ ...doc.data() });
       } else {
         // doc.data() will be undefined in this case

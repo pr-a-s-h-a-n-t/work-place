@@ -92,7 +92,7 @@ function AuthPage({ type }) {
           navigate('/employer/onboarding')
         }
       }
-      console.log(result,'result');
+      // console.log(result,'result');
     })
     .catch((error) => {})
   

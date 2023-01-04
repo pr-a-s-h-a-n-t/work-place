@@ -21,7 +21,7 @@ function MessageArea({
   let user = JSON.parse(localStorage.getItem("user"));
   let user_id = user.uid;
   const submitMessage = (text) => {
-    console.log(currentSelectedMessage);
+    // console.log(currentSelectedMessage);
     const conversation_doc_id = uuid();
     // update the last message in the last_message collection
     setDoc(

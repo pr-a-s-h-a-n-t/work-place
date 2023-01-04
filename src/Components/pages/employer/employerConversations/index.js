@@ -10,7 +10,7 @@ function EmployerConversation() {
   const [selectedSectionMobile, setSelectedSectionMobile] = useState("sidebar");
   const [currentSelectedMessage, setCurrentSelectedMessage] = useState(null);
   const handleClick = async (message) => {
-    console.log(message);
+    // console.log(message);
     setCurrentSelectedMessage(message);
     // fetch all the docs from the conversation collection,
     //  where the conversation id is equal to the conversation id of the message

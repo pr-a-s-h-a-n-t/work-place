@@ -140,7 +140,7 @@ const [state, dispatch] = React.useContext(DarkmodeContext);
       console.log(data);
       deleteDoc(doc(db, "applications", data.application_id));
       Notification({
-        type: "success",
+        type: "danger",
         message: "Application Rejected",
       });
     }
